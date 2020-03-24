@@ -1,0 +1,14 @@
+.home-banner {
+  background-image: asset-url("banner-image.jpg");
+  background-size: cover;
+  background-position: 45% 55%;
+  padding: 150px 0;
+  height: 500px;
+  width: 100% auto;
+}
+
+h2 {
+  font-size: 48px;
+  color: black;
+  font-style: italic;
+}

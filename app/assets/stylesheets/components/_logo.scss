@@ -1,4 +1,11 @@
-
 .logo {
-  background-image: url("assets/images/fleapit_logo");
+  width: 40px;
+  font-size: 40px;
+  font-family: $logo-font;
+  font-weight: bold;
+  font-style: italic;
+  color: $main-color !important;
+  &:hover {
+    color: $main-color;
+  }
 }
