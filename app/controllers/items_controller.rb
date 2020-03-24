@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   # skip_before_action :authenticate_user!, only: []
   # before_action :set_item, only: [:show, :edit, :update, :destroy]
   def index
-    @items = Item.where(user_id: current_user.id)
+    @items = Item.where(user: current_user)
   end
 
   # def show
