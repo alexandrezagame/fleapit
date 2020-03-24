@@ -34,10 +34,11 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  # def destroy
-  #   @item.destroy
-  #   redirect_to items_path, notice: "Item destroyed"
-  # end
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path, notice: "Item destroyed"
+  end
 
   # private
 
