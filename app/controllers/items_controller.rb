@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   # skip_before_action :authenticate_user!, only: []
   # before_action :set_item, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, except: :home
   def index
     @items = Item.where(user: current_user)
   end
@@ -34,10 +35,11 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  # def destroy
-  #   @item.destroy
-  #   redirect_to items_path, notice: "Item destroyed"
-  # end
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path, notice: "Item destroyed"
+  end
 
   # private
 
@@ -46,6 +48,6 @@ class ItemsController < ApplicationController
   # end
 
   def item_params
-    params.require(:item).permit(:name, :description)
+    params.require(:item).permit(:name, :description, :brand, :picture)
   end
 end

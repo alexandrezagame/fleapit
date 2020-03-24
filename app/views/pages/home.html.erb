@@ -1,10 +1,10 @@
 <%= render 'shared/horizontal-navbar' %>
 <%= render 'shared/landing-page-banner' %>
 
-<div class="home-container">
+<%= render "shared/horizontal-navbar"  %>
+<%= render "shared/home-banner"  %>
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to 'Items', items_path  %>
-</div>
+
+<%= link_to 'Connect', new_user_session_path, class:"button" %>
+
 
