@@ -9,18 +9,19 @@ class ItemsController < ApplicationController
   #   #see item of another user
   # end
 
-  # def create
-  #   @item = Item.new(item_params)
-  #   if @item.save!
-  #     redirect to @item, notice: "Item added"
-  #   else
-  #     render :new
-  #   end
-  # end
+  def create
+    @item = Item.new(item_params)
+    @item.user = current_user #remove when pundit is implemented
+    if @item.save!
+      redirect_to items_path, notice: "Item added"
+    else
+      render :new
+    end
+  end
 
   # def update
   #   if @item.update(item_params)
-  #     redirect_to @item, notice: "Item updated"
+  #     redirect_to items_path, notice: "Item updated"
   #   else
   #     render :edit
   #   end
@@ -29,9 +30,9 @@ class ItemsController < ApplicationController
   # def edit
   # end
 
-  # def new
-  #   @item = Item.new
-  # end
+  def new
+    @item = Item.new
+  end
 
   # def destroy
   #   @item.destroy
@@ -44,7 +45,7 @@ class ItemsController < ApplicationController
   #   @item = Item.find(params[:id])
   # end
 
-  # def item_params
-  #   params.require(:item).permit(:name, :description)
-  # end
+  def item_params
+    params.require(:item).permit(:name, :description)
+  end
 end
