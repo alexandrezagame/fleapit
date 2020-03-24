@@ -3,6 +3,7 @@
 .navbar{
   justify-content: space-between;
   background-color: white !important;
+  padding: 15px 30px;
 }
 
 .navbar .navbar-collapse {
@@ -22,7 +23,21 @@
   background-image: linear-gradient(#ec6b637a, #ffffff);
 }
 
+.dropdown-menu-right {
+  border: none;
+  margin-top: 28px;
+  font-family: $font;
+  border-radius: 4px;
+}
 
+.dropdown-item {
+    color: $dark-blue;
+    &:hover {
+    background-color: white;
+    color: $main-color;
+    opacity: 0.6;
+  }
+}
 
 
 
