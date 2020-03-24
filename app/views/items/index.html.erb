@@ -1,18 +1,15 @@
 <div class="row justify-content-center">
     <div class="col-6">
-<h1>Your items</h1>
-        <div class="card-trip">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <h1>Your items</h1>
+        <% @items.each do |item| %>
+          <div class="card-trip">
+            <%= cl_image_tag item.picture.key, height: 300, width: 400, crop: :fill %>
             <div class="card-trip-infos">
-                <div>
-                    <% @items.each do |item| %>
-                    <%= item.name %>
-                    <%= item.description %>
-                    <%= cl_image_tag @user.item.pictures.key, height: 300, width: 400, crop: :fill %>
-                </div>
-                <% end %>
+              <%= item.name %>
+              <%= item.description %>
             </div>
-        </div>
-      <%= link_to 'Upload an item', new_item_path  %>
+          </div>
+        <% end %>
+        <%= link_to 'Upload an item', new_item_path  %>
     </div>
 </div>
