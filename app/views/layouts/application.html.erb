@@ -10,12 +10,8 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/horizontal-navbar'%>
-    <div class="home-banner">
-</div>
-<div>
-<h2>The sustainable exchange platform</h2>
-</div>
+
+    <div class="container">
 
     <%= yield %>
 
@@ -24,7 +20,7 @@
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
-
+  </div>
   </body>
 </html>
 
