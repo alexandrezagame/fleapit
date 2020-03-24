@@ -7,6 +7,7 @@
             <div class="card-trip-infos">
               <%= item.name %>
               <%= item.description %>
+              <%= link_to 'Destroy', item_path(item), method: :delete  %>
             </div>
           </div>
         <% end %>
