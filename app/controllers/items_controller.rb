@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   # skip_before_action :authenticate_user!, only: []
   # before_action :set_item, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, except: :home
   def index
     @items = Item.where(user: current_user)
   end
