@@ -9,24 +9,24 @@ Item.destroy_all
 User.destroy_all
 
 puts "creating users"
-felix = User.create!(email: 'godmode@god.gg', password: 'travelworms')
+felix = User.create!(email: 'godmode@god.gg', username: 'God', password: 'travelworms')
 felix.save!
-alex = User.create!(email: 'alex@gmail.com', password: 'travelworms')
+alex = User.create!(email: 'alex@gmail.com', username: 'Alex', password: 'travelworms')
 alex.save!
-nina = User.create!(email: 'nina@gmail.com', password: 'travelworms')
+nina = User.create!(email: 'nina@gmail.com', username: 'Nina', password: 'travelworms')
 nina.save!
-daniel = User.create!(email: 'daniel@gmail.com', password: 'travelworms')
+daniel = User.create!(email: 'daniel@gmail.com', username: 'Daniel', password: 'travelworms')
 daniel.save!
-guest = User.create!(email: 'guest@gmail.com', password: 'travelworms')
+guest = User.create!(email: 'guest@gmail.com', username: 'Guest', password: 'travelworms')
 guest.save!
 
 
 puts "creating items"
-pants = Item.create!(name: 'Pants', description: 'Nice Pants', user: felix)
+pants = Item.create!(name: 'Pants', brand: 'Prada', description: 'Bought these on a market in Bangkok and paid alot of money, they are not fake the guy said.', user: felix)
 pants.save!
-tshirt = Item.create!(name: 'T-Shirt', description: 'Ugly T-Shirt', user: alex)
+tshirt = Item.create!(name: 'T-Shirt', brand: 'H&M', description: 'Just take it..', user: alex)
 tshirt.save!
-jacket = Item.create!(name: 'Jacket', description: 'Gucci Jacket', user: nina)
+jacket = Item.create!(name: 'Jacket', brand: 'Gucci', description: 'Vintage gucci from fall season 1995.', user: nina)
 jacket.save!
-shoes = Item.create!(name: 'Shoe', description: 'Prada Shoes', user: felix)
+shoes = Item.create!(name: 'Shoe', brand: 'Louboutin', description: 'Worn three times, no damages!', user: felix)
 shoes.save!
