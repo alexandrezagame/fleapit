@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_many_attached :pictures
 
   validates :name, presence: true
+  validates :brand, presence: true
   validates :description, presence: true
   # validates :description, presence: true
   # validates :gender, presence: true, inclusion {in: CATEGORIES/GENDER}

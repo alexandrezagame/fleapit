@@ -1,0 +1,29 @@
+// find code for hamburger in _menu-burger.scss
+
+.navbar{
+  justify-content: space-between;
+  background-color: white !important;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+
+
+.navbar-toggler {
+  font-size: 24px !important;
+}
+
+.nav-background {
+  background-image: linear-gradient(rgba(236, 107, 99, 1), rgba(255, 255, 255, 255));
+}
+
+
+
+
+
+
