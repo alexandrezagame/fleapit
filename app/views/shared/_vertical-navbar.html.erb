@@ -1,13 +1,17 @@
 <div class="vertical-navbar">
   <div class="row justify-content-between">
-    <button class="button-small" href="#">Settings</button>
-    <button class="button-small" href="#">Menu</button>
+    <%= render 'shared/wheel' %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   </div>
-  <img src="https://kitt.lewagon.com/placeholder/users/random" alt="">
-  <div class="profile-infos">
-    <h3>Carry</h3>
-    <img src="noun_ranking_1987379.png" alt="">
-    <h3>Stockholm</h3>
+  <div class="text-center">
+    <img src="https://kitt.lewagon.com/placeholder/users/random" alt="" class="avatar-xl-large">
+    <div class="profile-infos">
+      <h3>Carry</h3>
+      <img src="noun_ranking_1987379.png" alt="">
+      <h3>Stockholm</h3>
+    </div>
   </div>
   <div class="row justify-content-around">
     <button class="button-small" href="#">Category</button>
