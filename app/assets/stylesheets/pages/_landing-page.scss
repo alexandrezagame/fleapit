@@ -5,17 +5,10 @@
   position: relative;
   height: 500px;
   width: 100% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.home-banner a {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 8em;
-  display: block;
-}
-
-// This is the "footer" under the banner.
 
 h2 {
   font-size: 48px;
