@@ -1,0 +1,73 @@
+.card-information a {
+  float: right;
+  color: black;
+  text-decoration: none;
+  &:hover {
+    font-size: 110%;
+    text-decoration: none;
+  }
+}
+
+.image-items {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0px;
+}
+
+.image-items > img {
+  width: 200px;
+  height: 200px;
+  margin: 0px 15px;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-family: $font;
+  margin: 20px;
+  // width: 800px;
+  background-color: $light-gray;
+  margin: 20px;
+}
+
+.card-trip > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.card-information h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0px !important;
+  text-align: center;
+  padding: 10px !important;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-information {
+  text-align: center;
+  padding: 16px;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-gray;
+  font-family: $font;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.card-trip-infos {
+  background-color: white;
+}

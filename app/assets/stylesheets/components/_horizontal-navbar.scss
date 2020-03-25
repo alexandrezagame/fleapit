@@ -1,0 +1,44 @@
+// find code for hamburger in _menu-burger.scss
+
+.navbar{
+  justify-content: space-between;
+  background-color: white !important;
+  padding: 15px 30px;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+
+
+.navbar-toggler {
+  font-size: 24px !important;
+}
+
+.nav-background {
+  background-image: linear-gradient(#ec6b637a, #ffffff);
+}
+
+.dropdown-menu-right {
+  border: none;
+  margin-top: 28px;
+  font-family: $font;
+  border-radius: 4px;
+}
+
+.dropdown-item {
+    color: $dark-blue;
+    &:hover {
+    background-color: white;
+    color: $main-color;
+    opacity: 0.6;
+  }
+}
+
+
+
+

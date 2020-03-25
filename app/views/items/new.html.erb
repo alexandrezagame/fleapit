@@ -1,2 +1,10 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<div class="row justify-content-center">
+    <div class="col-8">
+        <h1 style="text-align: center;">Upload item</h1>
+          <div class="card-trip">
+            <div class="card-information">
+               <%= render 'form', item: @item %>
+            </div>
+        </div>
+    </div>
+</div>
