@@ -4,7 +4,6 @@
     <%= f.input :description, as: :text, :input_html => { :cols => 5, :rows => 5 }%>
     <%= f.input :min_price %>
     <%= f.input :max_price %>
-    <%= f.input :picture, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
-
+    <%= f.input :pictures, as: :file, input_html: { class: 'd-none', multiple: true }, label_html: { class: 'upload-photo'}, label: '📷 Upload photos' %>
     <%= f.submit %>
   <% end %>
