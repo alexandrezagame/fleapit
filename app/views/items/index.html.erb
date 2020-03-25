@@ -1,10 +1,10 @@
 <div class="row justify-content-center">
-    <div class="col-6">
-        <h1>Your items</h1>
-        <% if user_signed_in? %>
+    <div class="col-8">
+        <h1 style="text-align: center;">Your items</h1>
         <% @items.each do |item| %>
-          <div class="card-trip">
-            <%= cl_image_tag item.picture.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-trip">
+          <div class="card-information">
+            <div>
             <div class="card-trip-infos">
               <%= item.name %>
               <%= item.description %>
@@ -13,11 +13,16 @@
               <%= item.max_price %>
               <%= link_to '', edit_item_path(item), class:"fas fa-cog" %>
             </div>
+            <div>
+            </div>
           </div>
+          <div class="image-items">
+            <%= cl_image_tag item.picture.key, class: "items-image", height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag item.picture.key, class: "items-image", height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag item.picture.key, class: "items-image", height: 300, width: 400, crop: :fill %>
+          </div>
+        </div>
         <% end %>
         <%= link_to 'Upload an item', new_item_path  %>
-        <% else %>
-        <%= f.button :submit, "Sign up", class:"button" %>
-    <% end %>
     </div>
 </div>
