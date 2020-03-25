@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_one_attached :picture
+  has_many_attached :pictures
 
   validates :name, presence: true
   validates :brand, presence: true
