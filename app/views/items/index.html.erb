@@ -1,23 +1,26 @@
 <div class="row justify-content-center">
     <div class="col-12 col-md-6">
         <h1 style="text-align: center;">Your items</h1>
-                <% @items.each do |item| %>
-                <div class="card-trip">
+        <% @items.each do |item| %>
+        <div class="card-trip">
             <div class="card-information">
                 <%= link_to '', edit_item_path(item), class:"fas fa-cog" %>
-                <h2><%= item.name %></h2>
-                <p><%= item.description %></p>
+                <h2>
+                    <%= item.name %>
+                </h2>
+                <p>
+                    <%= item.description %>
+                </p>
                 <%= item.min_price %>
                 <%= item.max_price %>
             </div>
             <div class="image-items">
-                <%= cl_image_tag item.picture.key, class: "items-image", height: 300, width: 400, crop: :fill %>
-                <%= cl_image_tag item.picture.key, class: "items-image", height: 300, width: 400, crop: :fill %>
-                <%= cl_image_tag item.picture.key, class: "items-image", height: 300, width: 400, crop: :fill %>
+                <% item.pictures.each do |picture| %>
+                <%= cl_image_tag picture.key, class: "items-image" %>
+                <% end %>
             </div>
         </div>
         <% end %>
         <%= link_to 'Upload an item', new_item_path  %>
     </div>
 </div>
-
