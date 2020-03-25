@@ -1,8 +1,10 @@
 <!-- this is the registration code  -->
-<div class="sign-form">
+<%= render "shared/horizontal-navbar" %>
+
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-6">
-            <div class="signup">
+         <div class="col-12 col-md-6">
+            <div class="form-login">
                 <h2>Sign up</h2>
                 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 <%= f.error_notification %>
@@ -10,10 +12,12 @@
                     <%= f.input :email,
                 required: true,
                 autofocus: true,
+                placeholder: "bob@gmail.com",
                 input_html: { autocomplete: "email" }%>
                     <%= f.input :username,
                 required: true,
                 autofocus: true,
+                placeholder: "Yves Saint Lowrent",
                 input_html: { autocomplete: "email" }%>
                     <%= f.input :password,
                 required: true,
@@ -25,7 +29,7 @@
                     <%= f.input :avatar, as: :file %>
                 </div>
                 <div class="form-actions">
-                    <%= f.button :submit, "Sign up", class:"button" %>
+                    <%= f.button :submit, "Sign up", class:"btn btn-primary" %>
                 </div>
                 <% end %>
                 <%= render "devise/shared/links" %>
