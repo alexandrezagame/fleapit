@@ -1,3 +1,8 @@
+// This is the code for the hamburger-menu (obviously).
+
+.hamburger {
+  background-color: blue;
+}
 .gg-menu {
     transform: scale(var(--ggs,1))
 }
@@ -9,7 +14,7 @@
     display: block;
     width: 40px;
     height: 3px;
-    border-radius: 3px;
+    border-radius: 8px;
     background: currentColor;
 }
 .gg-menu::after,

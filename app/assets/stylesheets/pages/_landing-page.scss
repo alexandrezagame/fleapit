@@ -2,13 +2,22 @@
   background-image: asset-url("banner-image.jpg");
   background-size: cover;
   background-position: 45% 55%;
-  padding: 150px 0;
+  padding: 250px 250px;
+  text-align: center;
+  position: relative;
   height: 500px;
   width: 100% auto;
+  text-align: center;
 }
+
+// This is the "footer" under the banner.
 
 h2 {
   font-size: 48px;
   color: black;
   font-style: italic;
+  color: $dark-blue;
+  text-align: center;
+  padding: 20px;
+  font-family: $large-font;
 }
