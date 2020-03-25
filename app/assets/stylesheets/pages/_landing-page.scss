@@ -2,12 +2,17 @@
   background-image: asset-url("banner-image.jpg");
   background-size: cover;
   background-position: 45% 55%;
-  padding: 250px 250px;
-  text-align: center;
   position: relative;
   height: 500px;
   width: 100% auto;
+}
+
+.home-banner a {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+  display: block;
 }
 
 // This is the "footer" under the banner.
