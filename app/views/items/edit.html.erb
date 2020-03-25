@@ -1,2 +1,6 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<h1>Edit your item</h1>
+<%= render 'form', item: @item %>
+
+    <%= link_to 'Destroy', item_path(@item), method: :delete  %>
+
+
