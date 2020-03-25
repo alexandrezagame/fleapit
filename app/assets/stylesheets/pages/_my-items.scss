@@ -1,17 +1,12 @@
-.card-information a {
+.setting-wheel {
   float: right;
-  color: black;
-  text-decoration: none;
-  &:hover {
-    font-size: 110%;
-    text-decoration: none;
-  }
 }
 
 .image-items {
   display: flex;
   justify-content: space-around;
   padding: 10px 0px;
+  width: 100%;
 }
 
 .image-items > img {
@@ -42,13 +37,17 @@
   font-weight: bold;
   margin: 0px !important;
   text-align: center;
-  padding: 10px !important;
 }
 
-.card-trip p {
+.card-trip h5 {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+}
+
+.card-trip p {
+  float: right;
+  padding: 0px 5px;
 }
 
 .card-information {

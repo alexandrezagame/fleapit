@@ -2,7 +2,7 @@
 // This button is used on our landing-page for sign-up (landing-page-banner.hmtl.erb)
 
 .button {
-  background-color: #F46C63;
+  background-color: $main-color;
   color: white;
   font-family: $font;
   font-size: 14px;
@@ -16,7 +16,7 @@
 }
 
 .button-small {
-  background-color: #F46C63;
+  background-color: $main-color;
   color: white;
   font-family: $font;
   font-size: 14px;
