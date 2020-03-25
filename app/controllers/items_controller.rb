@@ -20,16 +20,17 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def update
-  #   if @item.update(item_params)
-  #     redirect_to items_path, notice: "Item updated"
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    if @item.update(item_params)
+      redirect_to items_path, notice: "Item updated"
+    else
+      render :edit
+    end
+  end
 
-  # def edit
-  # end
+  def edit
+    @item = Item.find(params[:id])
+  end
 
   def new
     @item = Item.new
@@ -48,6 +49,6 @@ class ItemsController < ApplicationController
   # end
 
   def item_params
-    params.require(:item).permit(:name, :description, :brand, :picture)
+    params.require(:item).permit(:name, :description, :brand, :picture, :min_price, :max_price)
   end
 end
