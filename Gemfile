@@ -18,6 +18,7 @@ gem 'devise'
 gem 'geocoder'
 gem 'pundit'
 
+
 #search function
 
 #cloudinary / dotenv security

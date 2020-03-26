@@ -7,9 +7,9 @@ class ItemsController < ApplicationController
     @items = policy_scope(Item).order(created_at: :desc)
   end
 
-  # def show
-  #   #see item of another user
-  # end
+  def potential_matches #showing potential matches from member routes
+    @items = Item.where.not(user: current_user)
+  end
 
   def create
     @item = Item.new(item_params)
