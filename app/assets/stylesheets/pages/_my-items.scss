@@ -26,6 +26,7 @@
   // width: 800px;
   background-color: $light-gray;
   margin: 20px;
+  flex-grow: 1;
 }
 
 .card-trip > img {
@@ -71,4 +72,12 @@
 
 .card-trip-infos {
   background-color: white;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
 }
