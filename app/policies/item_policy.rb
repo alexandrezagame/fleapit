@@ -22,4 +22,10 @@ class ItemPolicy < ApplicationPolicy
   def new?
     create?
   end
+  def like?
+    true
+  end
+  def dislike?
+    true
+  end
 end
