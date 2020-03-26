@@ -9,14 +9,35 @@ Item.destroy_all
 User.destroy_all
 
 puts "creating users"
-felix = User.create!(email: 'godmode@god.gg', username: 'God', password: '123456', location: Stockholm)
+
+felix_image = URI.open('https://ca.slack-edge.com/T02NE0241-UT45X0WAX-59f8a63171b0-512')
+felix = User.create!(email: 'godmode@god.gg', username: 'God', password: '123456', location: 'Stockholm')
+felix.avatar.attach(io: felix_image, filename: 'felix.jpg', content_type: 'image/jpg')
 felix.save!
-alex = User.create!(email: 'alex@gmail.com', username: 'Alex', password: '123456', location: Stockholm)
+
+alex_image = URI.open('https://ca.slack-edge.com/T02NE0241-UT467HFK5-f6b66015ea82-512')
+alex = User.create!(email: 'alex@gmail.com', username: 'Alex', password: '123456', location: 'Stockholm')
+alex.avatar.attach(io: alex_image, filename: 'alex.jpg', content_type: 'image/jpg')
 alex.save!
-nina = User.create!(email: 'nina@gmail.com', username: 'Nina', password: '123456', location: Stockholm)
+
+nina_image = URI.open('https://ca.slack-edge.com/T02NE0241-UTFN259RB-fe0464c116f3-512')
+nina = User.create!(email: 'nina@gmail.com', username: 'Nina', password: '123456', location: 'Stockholm')
+nina.avatar.attach(io: nina_image, filename: 'nina.jpg', content_type: 'image/jpg')
 nina.save!
-daniel = User.create!(email: 'daniel@gmail.com', username: 'Daniel', password: '123456', location: Stockholm)
+
+
+daniel_image = URI.open('https://ca.slack-edge.com/T02NE0241-UTHJ33JTZ-40af3f73854a-512')
+daniel = User.create!(email: 'daniel@gmail.com', username: 'Daniel', password: '123456', location: 'Stockholm')
+daniel.avatar.attach(io: daniel_image, filename: 'daniel.jpg', content_type: 'image/jpg')
 daniel.save!
+
+
+
+
+
+
+
+
 # madeleine = User.create!(email: 'madeleine@gmail.com', username: 'Madeleine', password: '123456')
 # madeleine.save!
 # sander = User.create!(email: 'sander@gmail.com', username: 'Sander', password: '123456')
