@@ -1,16 +1,16 @@
 <div class="vertical-navbar">
-  <div class="row justify-content-between">
+  <div class="row justify-content-between p-3">
     <%= render 'shared/wheel' %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
   <div class="text-center">
-    <img src="https://kitt.lewagon.com/placeholder/users/random" alt="" class="avatar-xl-large">
+    <%= cl_image_tag current_user.avatar.key, class: "avatar-xl-large" %>
     <div class="profile-infos">
       <h3><%=  current_user.username %></h3>
       <img src="noun_ranking_1987379.png" alt="">
-      <h3>Stockholm</h3>
+      <h3><%= current_user.location %></h3>
     </div>
   </div>
   <div class="row justify-content-around">

@@ -1,6 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
+require "open-uri"
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
@@ -17,20 +17,20 @@ nina = User.create!(email: 'nina@gmail.com', username: 'Nina', password: '123456
 nina.save!
 daniel = User.create!(email: 'daniel@gmail.com', username: 'Daniel', password: '123456')
 daniel.save!
-madeleine = User.create!(email: 'madeleine@gmail.com', username: 'Madeleine', password: '123456')
-madeleine.save!
-sander = User.create!(email: 'sander@gmail.com', username: 'Sander', password: '123456')
-sander.save!
-george = User.create!(email: 'george@gmail.com', username: 'George', password: '123456')
-george.save!
-raphaelle = User.create!(email: 'raphaelle@gmail.com', username: 'Raphaelle', password: '123456')
-raphaelle.save!
-yves = User.create!(email: 'yves@gmail.com', username: 'Yves', password: '123456')
-yves.save!
-claire = User.create!(email: 'claire@gmail.com', username: 'Claire', password: '123456')
-claire.save!
-valerie = User.create!(email: 'valerie@gmail.com', username: 'Valerie', password: '123456')
-valerie.save!
+# madeleine = User.create!(email: 'madeleine@gmail.com', username: 'Madeleine', password: '123456')
+# madeleine.save!
+# sander = User.create!(email: 'sander@gmail.com', username: 'Sander', password: '123456')
+# sander.save!
+# george = User.create!(email: 'george@gmail.com', username: 'George', password: '123456')
+# george.save!
+# raphaelle = User.create!(email: 'raphaelle@gmail.com', username: 'Raphaelle', password: '123456')
+# raphaelle.save!
+# yves = User.create!(email: 'yves@gmail.com', username: 'Yves', password: '123456')
+# yves.save!
+# claire = User.create!(email: 'claire@gmail.com', username: 'Claire', password: '123456')
+# claire.save!
+# valerie = User.create!(email: 'valerie@gmail.com', username: 'Valerie', password: '123456')
+# valerie.save!
 
 
 require "open-uri"
