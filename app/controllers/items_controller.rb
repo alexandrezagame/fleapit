@@ -7,9 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def potential_matches #showing potential matches from member routes
-
     @items = Item.where.not(user: current_user)
-
     authorize @items #pundit
     @my_item = Item.find(params[:id])
   end
@@ -63,8 +61,7 @@ class ItemsController < ApplicationController
     redirect_to items_path, notice: "Item destroyed"
   end
 
-  # private
-
+  private
   # def set_item
   #   @item = Item.find(params[:id])
   # end
