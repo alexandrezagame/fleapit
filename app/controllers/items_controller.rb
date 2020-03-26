@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def potential_matches #showing potential matches from member routes
+
     @items = Item.where.not(user: current_user)
 
     authorize @items #pundit
