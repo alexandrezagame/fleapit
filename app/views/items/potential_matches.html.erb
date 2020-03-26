@@ -1,0 +1,21 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <h1 style="text-align: center;">Show items from other users</h1>
+          <%  @items.each do |i| %>
+            <div class="card-trip">
+              <div class="card-information">
+                <%= i.user.username %>
+                <%= i.description %>
+                <%= i.min_price %>
+                <%= i.max_price %>
+              </div>
+              <div class="image-items">
+                <% i.pictures.each do |picture| %>
+                 <%= cl_image_tag picture.key, class: "items-image" %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <%# link_to 'show page button', item_path(item) %>
+    </div>
+</div>

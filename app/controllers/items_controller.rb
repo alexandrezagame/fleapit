@@ -6,9 +6,9 @@ class ItemsController < ApplicationController
     @items = Item.where(user: current_user)
   end
 
-  # def show
-  #   #see item of another user
-  # end
+  def potential_matches #showing potential matches from member routes
+    @items = Item.where.not(user: current_user)
+  end
 
   def create
     @item = Item.new(item_params)
