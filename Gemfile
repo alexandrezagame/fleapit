@@ -17,6 +17,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'geocoder'
 gem 'pundit'
+gem 'acts_as_votable'
 
 
 #search function

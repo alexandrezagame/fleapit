@@ -1,11 +1,13 @@
-<div class="row justify-content-center">
-    <div class="col-8">
-        <h1 style="text-align: center;">Upload item</h1>
-          <div class="card-trip">
-            <div class="card-information">
-               <%= render 'form', item: @item %>
+<div class="big-container">
+    <%= render 'shared/vertical-navbar' %>
+        <div class="form-container">
+            <h1 style="text-align: center;">Upload item</h1>
+            <div class="card-trip">
+                <div class="card-information">
+                    <%= render 'form', item: @item %>
+                </div>
             </div>
                <%= link_to 'Back', items_path  %>
         </div>
     </div>
-</div>
+
