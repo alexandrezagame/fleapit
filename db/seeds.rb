@@ -29,17 +29,24 @@ pants = Item.new(name: 'Pants', brand: 'Prada', description: 'Bought these on a 
 pants.pictures.attach(io: file1, filename: 'pants.jpg', content_type: 'image/jpg')
 pants.save!
 
-file2 = URI.open('https://cdn11.bigcommerce.com/s-rxzabllq/images/stencil/1280x1280/products/910/18045/Kids-Plain-Poly-Fit-Quick_Dry-Tshirt-red__13799.1567089094.jpg?c=2')
+file2 = URI.open('https://tres-bien.com/media/catalog/product/cache/4df57bf4c117b7e5982dee8955fd82cb/s/t/sterling-ruby_191205_035.jpg')
+pants = Item.new(name: 'Pants', brand: 'Prada', description: 'Bought these on a market in Bangkok and paid alot of money, they are not fake the guy said.', min_price: 250, max_price: 1000, user: felix)
+pants.pictures.attach(io: file2, filename: 'pants.jpg', content_type: 'image/jpg')
+pants.save!
+
+
+file3 = URI.open('https://cdn11.bigcommerce.com/s-rxzabllq/images/stencil/1280x1280/products/910/18045/Kids-Plain-Poly-Fit-Quick_Dry-Tshirt-red__13799.1567089094.jpg?c=2')
 tshirt = Item.new(name: 'T-Shirt', brand: 'H&M', description: 'Just take it..', min_price: 250, max_price: 1000, user: alex)
-tshirt.pictures.attach(io: file2, filename: 'tshirt.jpg', content_type: 'image/jpg')
+tshirt.pictures.attach(io: file3, filename: 'tshirt.jpg', content_type: 'image/jpg')
 tshirt.save!
 
-file3 = URI.open('https://images.canadagoose.com/image/upload/w_1333,c_scale,f_auto,q_auto:best/v1547146139/product-image/2078M_11_d.jpg')
+file4 = URI.open('https://images.canadagoose.com/image/upload/w_1333,c_scale,f_auto,q_auto:best/v1547146139/product-image/2078M_11_d.jpg')
 jacket = Item.new(name: 'Jacket', brand: 'Gucci', description: 'Vintage gucci from fall season 1995.', min_price: 250, max_price: 1000, user: nina)
-jacket.pictures.attach(io: file3, filename: 'jacket.jpg', content_type: 'image/jpg')
+jacket.pictures.attach(io: file4, filename: 'jacket.jpg', content_type: 'image/jpg')
 jacket.save!
 
-file4 = URI.open('https://s3.amazonaws.com/nikeinc/assets/84925/Sp19_BB_Nike_Adapt_20181218_NIKE0538_Detail5_rectangle_1600.jpg?1547068102')
+file5 = URI.open('https://s3.amazonaws.com/nikeinc/assets/84925/Sp19_BB_Nike_Adapt_20181218_NIKE0538_Detail5_rectangle_1600.jpg?1547068102')
 shoes = Item.new(name: 'Shoe', brand: 'Louboutin', description: 'Worn three times, no damages!', min_price: 250, max_price: 1000, user: felix)
-shoes.pictures.attach(io: file4, filename: 'shoes.jpg', content_type: 'image/jpg')
+shoes.pictures.attach(io: file5, filename: 'shoes.jpg', content_type: 'image/jpg')
 shoes.save!
+
