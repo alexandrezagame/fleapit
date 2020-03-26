@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, except: :home
   def index
     @items = Item.where(user: current_user)
+    @items = policy_scope(Item).order(created_at: :desc)
   end
 
   # def show
