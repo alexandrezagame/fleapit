@@ -8,6 +8,19 @@ class ItemsController < ApplicationController
 
   def potential_matches #showing potential matches from member routes
     @items = Item.where.not(user: current_user)
+    @my_item = Item.find(params[:id])
+  end
+
+  def like
+    @wanted_item = Item.find(params[:item_id])
+    @my_item = Item.find(params[:my_item])
+    redirect_to potential_matches_item_path(@my_item), alert: "LIKE"
+  end
+
+  def dislike
+    @not_wanted_item = Item.find(params[:item_id])
+    @my_item = Item.find(params[:my_item])
+    redirect_to potential_matches_item_path(@my_item), alert: "DISLIKE"
   end
 
   def create

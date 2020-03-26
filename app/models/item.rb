@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  acts_as_votable
+  acts_as_voter
   belongs_to :user
   has_many_attached :pictures
 
