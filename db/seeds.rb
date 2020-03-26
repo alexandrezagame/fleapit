@@ -114,7 +114,7 @@ chair1.save!
 file19 = URI.open('https://s7d5.scene7.com/is/image/Anthropologie/54748306_020_b2?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain')
 file20 = URI.open('https://s7d5.scene7.com/is/image/Anthropologie/54748306_020_b3?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain')
 file21 = URI.open('https://s7d5.scene7.com/is/image/Anthropologie/54748306_020_b4?$a15-pdp-detail-shot$&hei=900&qlt=80&fit=constrain')
-table1 = Item.new(name: 'Shoes', brand: 'Wood Wood', description: 'Crafted with tapered legs, curved corners, and subtle hints of brushed brass, this Mid Century-inspired piece lends a touch of casual charm to dining rooms, breakfast nooks, and eat-in kitchens alike.', min_price: 250, max_price: 1000, user: felix)
+table1 = Item.new(name: 'table', brand: 'Wood Wood', description: 'Crafted with tapered legs, curved corners, and subtle hints of brushed brass, this Mid Century-inspired piece lends a touch of casual charm to dining rooms, breakfast nooks, and eat-in kitchens alike.', min_price: 250, max_price: 1000, user: felix)
 table1.pictures.attach(io: file19, filename: 'table1.jpg', content_type: 'image/jpg')
 table1.pictures.attach(io: file20, filename: 'table1.jpg', content_type: 'image/jpg')
 table1.pictures.attach(io: file21, filename: 'table1.jpg', content_type: 'image/jpg')
