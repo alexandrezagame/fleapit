@@ -1,6 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
+require "open-uri"
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
@@ -15,13 +15,14 @@ alex = User.create!(email: 'alex@gmail.com', username: 'Alex', password: 'travel
 alex.save!
 nina = User.create!(email: 'nina@gmail.com', username: 'Nina', password: 'travelworms')
 nina.save!
+daniel_image = URI.open('https://cdn11.bigcommerce.com/s-qb5zncdqc6/images/stencil/2048x2048/products/5840/11417/womenssimplepantsblack__49371.1578586139.jpg?c=2')
 daniel = User.create!(email: 'daniel@gmail.com', username: 'Daniel', password: 'travelworms')
+daniel.avatar.attach(io: daniel_image, filename: 'pants.jpg', content_type: 'image/jpg')
 daniel.save!
 guest = User.create!(email: 'guest@gmail.com', username: 'Guest', password: 'travelworms')
 guest.save!
 
 
-require "open-uri"
 
 puts "creating items"
 file1 = URI.open('https://cdn11.bigcommerce.com/s-qb5zncdqc6/images/stencil/2048x2048/products/5840/11417/womenssimplepantsblack__49371.1578586139.jpg?c=2')
