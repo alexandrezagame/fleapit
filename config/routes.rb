@@ -2,5 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :items, only: [:index, :create, :new, :edit, :update, :destroy]
+  resources :items do
+    member do
+      get 'potential_matches'
+    end
+  end
 end
