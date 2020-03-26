@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :items do
+    get 'like'
+    get 'dislike'
     member do
       get 'potential_matches'
     end
