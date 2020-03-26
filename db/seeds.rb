@@ -9,18 +9,26 @@ Item.destroy_all
 User.destroy_all
 
 puts "creating users"
+
+felix_image = URI.open('https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-1/c78.44.552.552a/534970_10151589698980574_938152273_n.jpg?_nc_cat=102&_nc_sid=dbb9e7&_nc_ohc=qnPfySR9pD0AX8bK-wE&_nc_ht=scontent-arn2-1.xx&oh=a1b424052b30e24578b919bb6fff29d2&oe=5EA1345D')
 felix = User.create!(email: 'godmode@god.gg', username: 'God', password: 'travelworms')
+felix.avatar.attach(io: felix_image, filename: 'felix.jpg', content_type: 'image/jpg')
 felix.save!
+
+alex_image = URI.open('https://scontent-arn2-2.xx.fbcdn.net/v/t1.0-9/67115627_10156410753198359_2815536978777341952_n.jpg?_nc_cat=108&_nc_sid=7aed08&_nc_ohc=aZsggi25GN0AX-smTUq&_nc_ht=scontent-arn2-2.xx&oh=d88775f3a92abcad6f770f9a00b9881f&oe=5EA3F0D8')
 alex = User.create!(email: 'alex@gmail.com', username: 'Alex', password: 'travelworms')
+alex.avatar.attach(io: alex_image, filename: 'alex.jpg', content_type: 'image/jpg')
 alex.save!
+
+nina_image = URI.open('https://ca.slack-edge.com/T02NE0241-UTFN259RB-fe0464c116f3-512')
 nina = User.create!(email: 'nina@gmail.com', username: 'Nina', password: 'travelworms')
+nina.avatar.attach(io: nina_image, filename: 'nina.jpg', content_type: 'image/jpg')
 nina.save!
-daniel_image = URI.open('https://cdn11.bigcommerce.com/s-qb5zncdqc6/images/stencil/2048x2048/products/5840/11417/womenssimplepantsblack__49371.1578586139.jpg?c=2')
+
+daniel_image = URI.open('https://ca.slack-edge.com/T02NE0241-UTHJ33JTZ-40af3f73854a-512')
 daniel = User.create!(email: 'daniel@gmail.com', username: 'Daniel', password: 'travelworms')
-daniel.avatar.attach(io: daniel_image, filename: 'pants.jpg', content_type: 'image/jpg')
+daniel.avatar.attach(io: daniel_image, filename: 'daniel.jpg', content_type: 'image/jpg')
 daniel.save!
-guest = User.create!(email: 'guest@gmail.com', username: 'Guest', password: 'travelworms')
-guest.save!
 
 
 
