@@ -9,13 +9,13 @@ Item.destroy_all
 User.destroy_all
 
 puts "creating users"
-felix = User.create!(email: 'godmode@god.gg', username: 'God', password: '123456')
+felix = User.create!(email: 'godmode@god.gg', username: 'God', password: '123456', location: Stockholm)
 felix.save!
-alex = User.create!(email: 'alex@gmail.com', username: 'Alex', password: '123456')
+alex = User.create!(email: 'alex@gmail.com', username: 'Alex', password: '123456', location: Stockholm)
 alex.save!
-nina = User.create!(email: 'nina@gmail.com', username: 'Nina', password: '123456')
+nina = User.create!(email: 'nina@gmail.com', username: 'Nina', password: '123456', location: Stockholm)
 nina.save!
-daniel = User.create!(email: 'daniel@gmail.com', username: 'Daniel', password: '123456')
+daniel = User.create!(email: 'daniel@gmail.com', username: 'Daniel', password: '123456', location: Stockholm)
 daniel.save!
 # madeleine = User.create!(email: 'madeleine@gmail.com', username: 'Madeleine', password: '123456')
 # madeleine.save!
