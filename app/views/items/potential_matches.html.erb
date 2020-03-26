@@ -4,12 +4,12 @@
           <%  @items.each do |i| %>
             <div class="card-trip">
               <div class="card-information">
+                <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger" %>
                 <%= i.user.username %>
                 <%= i.description %>
                 <%= i.min_price %>
                 <%= i.max_price %>
                 <%= link_to 'like', item_like_path(i, my_item: @my_item), class:"btn btn-success" %>
-                <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger" %>
               </div>
               <div class="image-items">
                 <% i.pictures.each do |picture| %>
