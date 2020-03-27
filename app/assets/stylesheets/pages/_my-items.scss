@@ -78,9 +78,10 @@
 
 .card-information h2 {
   font-size: 24px;
-  font-weight: bold;
+  // font-weight: bold;
   margin: 0px !important;
   text-align: center;
+  padding: 5px;
 }
 
 .card-trip h5 {
@@ -90,8 +91,8 @@
 }
 
 .card-trip p {
-  float: right;
-  padding: 0px 5px;
+  // float: right;
+  padding: 5px 5px;
 }
 
 .card-information {
@@ -122,10 +123,6 @@
   background-color: white;
 }
 
-// .items-container {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     flex-grow: 1;
-// }
+.items-container h4 {
+  padding-top: 50px;
+}
