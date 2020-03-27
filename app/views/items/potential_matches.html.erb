@@ -6,7 +6,7 @@
     <div class="col-8">
         <h1 style="text-align: center;">Show items from other users</h1>
           <%  @items.each do |i| %>
-            <div class="card-trip">
+            <div data-item-id="<%= i.id %>" class="card-trip">
               <div class="card-information">
                 <h3>  <%= i.name %> </h3>
                 <%= i.description %>
@@ -16,8 +16,8 @@
                 <%= i.user.username %>
                 <%= cl_image_tag i.user.avatar.key, class: "avatar-xl-large" %>
                 <div class="voting">
-                <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger" %>
-                <%= link_to 'like', item_like_path(i, my_item: @my_item), class:"btn btn-success" %>
+                <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger", remote: true  %>
+                <%= link_to 'like', item_like_path(i, my_item: @my_item), class:"btn btn-success", remote: true %>
                 </div>
               </div>
               <div class="image-items">
