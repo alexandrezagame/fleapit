@@ -15,6 +15,8 @@ class ItemsController < ApplicationController
   def like
     @wanted_item = Item.find(params[:item_id])
     @my_item = Item.find(params[:my_item])
+    @wanted_item.liked_by @my_item
+    @wanted_item.vote_registered?
     respond_to do |format|
       format.html { redirect_to potential_matches_item_path(@my_item), alert: "LIKE" }
       format.js
@@ -24,6 +26,8 @@ class ItemsController < ApplicationController
   def dislike
     @not_wanted_item = Item.find(params[:item_id])
     @my_item = Item.find(params[:my_item])
+    @not_wanted_item.disliked_by @my_item
+    @not_wanted_item.vote_registered?
     respond_to do |format|
       format.html { redirect_to potential_matches_item_path(@my_item), alert: "DISLIKE" }
       format.js
