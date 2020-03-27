@@ -7,9 +7,10 @@ class ItemsController < ApplicationController
   end
 
   def potential_matches #showing potential matches from member routes
-    @items = Item.where.not(user: current_user)
-    authorize @items #pundit
+    # @items = Item.where.not(user: current_user)
     @my_item = Item.find(params[:id])
+    @items = Item.where.not(user: current_user).where.not(id: @my_item.find_voted_items)
+    authorize @items #pundit
   end
 
   def like

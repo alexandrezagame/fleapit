@@ -67,6 +67,7 @@
   background-color: $light-gray;
   margin: 20px;
   flex-grow: 1;
+
 }
 
 .card-trip > img {
@@ -101,6 +102,13 @@
   align-items: center;
   background-color: $light-gray;
   font-family: $font;
+  position: relative;
+}
+
+#edit-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .card-trip-infos .card-trip-user {
