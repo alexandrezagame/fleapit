@@ -2,19 +2,23 @@
   float: right;
 }
 
-#carousel {
+.voting {
+  padding: 10px;
+  border-top: 1px solid grey;
+}
+
+.image-items {
   display: flex;
   justify-content: space-around;
   padding: 10px 0px;
-  // width: 100%;
+  width: 100%;
 }
-
-#carousel > img {
+.image-items > img {
   width: 200px;
   height: 200px;
   margin: 0px 15px;
   object-fit: contain;
-  // flex: 1;
+  flex: 1;
 }
 
 .card-trip {

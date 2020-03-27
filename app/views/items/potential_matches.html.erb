@@ -8,12 +8,17 @@
           <%  @items.each do |i| %>
             <div class="card-trip">
               <div class="card-information">
-                <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger" %>
-                <%= i.user.username %>
+                <h3>  <%= i.name %> </h3>
                 <%= i.description %>
                 <%= i.min_price %>
                 <%= i.max_price %>
+                <br>
+                <%= i.user.username %>
+                <%= cl_image_tag i.user.avatar.key, class: "avatar-xl-large" %>
+                <div class="voting">
+                <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger" %>
                 <%= link_to 'like', item_like_path(i, my_item: @my_item), class:"btn btn-success" %>
+                </div>
               </div>
               <div class="image-items">
                 <% i.pictures.each do |picture| %>
