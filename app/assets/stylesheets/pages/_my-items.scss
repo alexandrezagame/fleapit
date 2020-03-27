@@ -2,10 +2,6 @@
   float: right;
 }
 
-.voting {
-  padding: 10px;
-  border-top: 1px solid #FEFEFE;
-}
 
 // -----------------CAROUSEL-------------------------------------
 .carousel {
@@ -24,11 +20,16 @@
   width: 300px;
   height: 300px;
   // margin: 0px 15px;
-  object-fit: cover !important;
+  object-fit: cover;
   flex: 1;
 }
 
 // ------------------ITEM CARDS ON THE OTHER PAGE-----------------
+.voting {
+  padding: 10px;
+  border-top: 1px solid #FEFEFE;
+}
+
 .image-items {
   display: flex;
   padding: 10px 0px;
