@@ -25,36 +25,32 @@ nina = User.create!(email: 'nina@gmail.com', username: 'Nina', password: '123456
 nina.avatar.attach(io: nina_image, filename: 'nina.jpg', content_type: 'image/jpg')
 nina.save!
 
-
 daniel_image = URI.open('https://ca.slack-edge.com/T02NE0241-UTHJ33JTZ-40af3f73854a-512')
 daniel = User.create!(email: 'daniel@gmail.com', username: 'Daniel', password: '123456', location: 'Stockholm')
 daniel.avatar.attach(io: daniel_image, filename: 'daniel.jpg', content_type: 'image/jpg')
 daniel.save!
 
+raphaelle_image = URI.open('https://avatars2.githubusercontent.com/u/60267962?s=460&v=4')
+raphaelle = User.create!(email: 'raphaelle@gmail.com', username: 'raphaelle', password: '123456', location: 'Stockholm')
+raphaelle.avatar.attach(io: raphaelle_image, filename: 'raphaelle.jpg', content_type: 'image/jpg')
+raphaelle.save!
+
+madeleine_image = URI.open('https://avatars0.githubusercontent.com/u/60282525?s=460&u=16f073fa53b604e80266e4a0dd684512d3a29b10&v=4')
+madeleine = User.create!(email: 'madeleine@gmail.com', username: 'madeleine', password: '123456', location: 'Stockholm')
+madeleine.avatar.attach(io: madeleine_image, filename: 'madeleine.jpg', content_type: 'image/jpg')
+madeleine.save!
+
+sander_image = URI.open('https://avatars3.githubusercontent.com/u/53917461?v=4')
+sander = User.create!(email: 'sander@gmail.com', username: 'sander', password: '123456', location: 'Stockholm')
+sander.avatar.attach(io: sander_image, filename: 'sander.jpg', content_type: 'image/jpg')
+sander.save!
+
+gheorghe_image = URI.open('https://avatars1.githubusercontent.com/u/58052561?v=4')
+gheorghe = User.create!(email: 'gheorghe@gmail.com', username: 'gheorghe', password: '123456', location: 'Stockholm')
+gheorghe.avatar.attach(io: gheorghe_image, filename: 'gheorghe.jpg', content_type: 'image/jpg')
+gheorghe.save!
 
 
-
-
-
-
-
-# madeleine = User.create!(email: 'madeleine@gmail.com', username: 'Madeleine', password: '123456')
-# madeleine.save!
-# sander = User.create!(email: 'sander@gmail.com', username: 'Sander', password: '123456')
-# sander.save!
-# george = User.create!(email: 'george@gmail.com', username: 'George', password: '123456')
-# george.save!
-# raphaelle = User.create!(email: 'raphaelle@gmail.com', username: 'Raphaelle', password: '123456')
-# raphaelle.save!
-# yves = User.create!(email: 'yves@gmail.com', username: 'Yves', password: '123456')
-# yves.save!
-# claire = User.create!(email: 'claire@gmail.com', username: 'Claire', password: '123456')
-# claire.save!
-# valerie = User.create!(email: 'valerie@gmail.com', username: 'Valerie', password: '123456')
-# valerie.save!
-
-
-require "open-uri"
 puts "creating items"
 
 file1 = URI.open('https://media.thereformation.com/image/upload/q_auto/c_scale,w_auto:breakpoints_100_2560_9_20:520/v1/prod/product_images/ginny-dress/ivory/5e28fd83b280f9001a7fdec9/original.jpg')
@@ -156,6 +152,90 @@ jeans1.pictures.attach(io: file31, filename: 'jeans1.jpg', content_type: 'image/
 jeans1.pictures.attach(io: file32, filename: 'jeans1.jpg', content_type: 'image/jpg')
 jeans1.pictures.attach(io: file33, filename: 'jeans1.jpg', content_type: 'image/jpg')
 jeans1.save!
+
+
+file32 = URI.open('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.realsimple.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Frs_horizontal_image_4%2Fpublic%2F1479312216%2Fwhite-house-black-market-jacquard-high-low-dress.jpg')
+file33 = URI.open("https://res.cloudinary.com/dgfsnlcab/image/upload/v1585324133/dress_xi0lbx.jpg")
+# file34 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/8b/eb/8beb5926b91443c88182621e69809c324db46cb4.jpg],origin[dam],category[ladies_dresses_mididresses],type[LOOKBOOK],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+dress1 = Item.new(name: 'Dress', brand: 'H&M', description: 'Sleeveless, calf-length in woven, crinkled fabric with a ruffle at neckline extending over shoulder straps.', min_price: 250, max_price: 900, user: raphaelle)
+dress1.pictures.attach(io: file32, filename: 'dress1.jpg', content_type: 'image/jpg')
+dress1.pictures.attach(io: file33, filename: 'dress1.jpg', content_type: 'image/jpg')
+# dress1.pictures.attach(io: file34, filename: 'dress1.jpg', content_type: 'image/jpg')
+dress1.save!
+
+
+
+file35 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Chino_pants.jpg/450px-Chino_pants.jpg')
+# file36 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/67/61/676173c98cbd0bde4bdad7d38e75a68e5eaf06e7.jpg],origin[dam],category[ladies_trousers],type[LOOKBOOK],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file37 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/ec/06/ec064c300dfa8bbca0214ba75d2af721c0b41442.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+pants1 = Item.new(name: 'Pants', brand: 'H&M', description: 'Ankle-length pants in viscose-blend twill with a high waist.', min_price: 150, max_price: 600, user: raphaelle)
+pants1.pictures.attach(io: file35, filename: 'pants1.jpg', content_type: 'image/jpg')
+# pants1.pictures.attach(io: file32, filename: 'pants1.jpg', content_type: 'image/jpg')
+# pants1.pictures.attach(io: file33, filename: 'pants1.jpg', content_type: 'image/jpg')
+pants1.save!
+
+# file38 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/1a/6f/1a6f74dbb5f56c542d67f6d56b4a685c551af3fe.jpg],origin[dam],category[ladies_shoes_sneakers],type[DESCRIPTIVESTILLLIFE],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file39 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/83/a6/83a6a9b4da890cb86273833be210f0a28567ddab.jpg],origin[dam],category[ladies_shoes_sneakers],type[DESCRIPTIVESTILLLIFE],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file40 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/f5/bf/f5bfc645f3ccf9262ea312d0e8c97b2062b695bf.jpg],origin[dam],category[ladies_shoes_sneakers],type[DESCRIPTIVEDETAIL],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# shoes1 = Item.new(name: 'Shoes', brand: 'H&M', description: 'Platform sneakers with lacing at front. Cotton canvas lining and insoles.', min_price: 100, max_price: 300, user: raphaelle)
+# shoes1.pictures.attach(io: file31, filename: 'shoes1.jpg', content_type: 'image/jpg')
+# shoes1.pictures.attach(io: file32, filename: 'shoes1.jpg', content_type: 'image/jpg')
+# shoes1.pictures.attach(io: file33, filename: 'shoes1.jpg', content_type: 'image/jpg')
+# shoes1.save!
+
+file41 = URI.open('https://media2.s-nbcnews.com/j/newscms/2017_29/1229402/traveling-dress-today-inline-170718_813c195488099d4eeb6f0a91b296dae7.fit-720w.jpg')
+# file42 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/97/b6/97b69030e17e2c4f95bbfc50bdc08498e1b1f25c.jpg],origin[dam],category[ladies_dresses_shortdresses],type[LOOKBOOK],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file43 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/bc/44/bc44486d9f308d5096402a10e9875030c53459ba.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+dress2 = Item.new(name: 'Dress', brand: 'H&M', description: 'Knee-length dress in cotton slub jersey. V-neck, butterfly sleeves, and gathered, elasticized seam at waist.', min_price: 100, max_price: 300, user: madeleine)
+dress2.pictures.attach(io: file41, filename: 'dress2.jpg', content_type: 'image/jpg')
+# dress2.pictures.attach(io: file32, filename: 'dress2.jpg', content_type: 'image/jpg')
+# dress2.pictures.attach(io: file33, filename: 'dress2.jpg', content_type: 'image/jpg')
+dress2.save!
+
+# file44 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/9e/33/9e33cda8c4e052cb921aac866e04a295652535d7.jpg],origin[dam],category[ladies_dresses_mididresses],type[LOOKBOOK],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file45 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/4d/3d/4d3d2f83114098a53e4c6e999b21ea2e148dbbc7.jpg],origin[dam],category[ladies_dresses_mididresses],type[LOOKBOOK],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file46 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/fe/7e/fe7ee22d94f461f221adc71ec9dfe8059adb4067.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# dress3 = Item.new(name: 'Dress', brand: 'H&M', description: 'Calf-length dress in airy, woven viscose fabric. Round neckline with decorative gathers, opening at back of neck with button, and wide, elbow-length raglan sleeves.', min_price: 200, max_price: 350, user: madeleine)
+# dress3.pictures.attach(io: file31, filename: 'dress3.jpg', content_type: 'image/jpg')
+# dress3.pictures.attach(io: file32, filename: 'dress3.jpg', content_type: 'image/jpg')
+# dress3.pictures.attach(io: file33, filename: 'dress3.jpg', content_type: 'image/jpg')
+# dress3.save!
+
+file47 = URI.open('https://img.starwarsbutiken.se/t-shirts/star-wars-the-rise-of-skywalker-t-shirt-basic-tee-400x400.jpg')
+# file48 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/a7/f8/a7f898c6cb8c440583ce2bf53d31cb173d9210de.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file49 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/9a/29/9a291dda81a32d3e8038c2a50766041a19983230.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+tshirt1 = Item.new(name: 'T-shirt', brand: 'H&M', description: 'Straight-cut T-shirt in thick cotton jersey with a printed design front and back. Trimmed crew neck.', min_price: 100, max_price: 200, user: sander)
+tshirt1.pictures.attach(io: file47, filename: 'tshirt1.jpg', content_type: 'image/jpg')
+# tshirt1.pictures.attach(io: file32, filename: 'tshirt1.jpg', content_type: 'image/jpg')
+# tshirt1.pictures.attach(io: file33, filename: 'tshirt1.jpg', content_type: 'image/jpg')
+tshirt1.save!
+
+# file50 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/7b/b4/7bb41e3d6a58203792a2ff793e33a114e5d25044.jpg],origin[dam],category[men_tshirtstanks_longsleeve],type[DESCRIPTIVESTILLLIFE],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file51 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/a9/c4/a9c4d1d5d07ecd69db2650b7e7993149fb89545a.jpg],origin[dam],category[men_tshirtstanks_longsleeve],type[DESCRIPTIVESTILLLIFE],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file52 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/00/23/002387527ef3802c12adcb7922dad2d7d3e4b373.jpg],origin[dam],category[men_tshirtstanks_longsleeve],type[LOOKBOOK],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# tshirt1 = Item.new(name: 'Printed shirt', brand: 'H&M', description: 'Straight-cut T-shirt in thick cotton jersey with a printed design front and back. Trimmed crew neck.', min_price: 150, max_price: 250, user: sander)
+# shirt1.pictures.attach(io: file31, filename: 'shirt1.jpg', content_type: 'image/jpg')
+# shirt1.pictures.attach(io: file32, filename: 'shirt1.jpg', content_type: 'image/jpg')
+# shirt1.pictures.attach(io: file33, filename: 'shirt1.jpg', content_type: 'image/jpg')
+# shirt1.save!
+
+file53 = URI.open('https://img10.joybuy.com/img/jfs/t1/3662/31/4473/117936/5b9c715cE6ca90022/6fe142d7ddc11c3c.jpg.dpg')
+# file54 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/d6/96/d6965ac162d507e7f561405a1da7e311528adf6e.jpg],origin[dam],category[men_hoodiessweatshirts_hoodies],type[LOOKBOOK],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file55 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/1b/d9/1bd9f78e40abc29ab8fe8d2dfaa14e75295aa1ee.jpg],origin[dam],category[men_hoodiessweatshirts_hoodies],type[DESCRIPTIVESTILLLIFE],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+jacket1 = Item.new(name: 'Hooded jacket', brand: 'H&M', description: 'Lightweight sweatshirt jacket with a double-layered, drawstring hood. Zipper at front, side pockets, and ribbing at cuffs and hem.', min_price: 100, max_price: 250, user: gheorghe)
+jacket1.pictures.attach(io: file53, filename: 'jacket1.jpg', content_type: 'image/jpg')
+# jacket1.pictures.attach(io: file32, filename: 'jacket1.jpg', content_type: 'image/jpg')
+# jacket1.pictures.attach(io: file33, filename: 'jacket1.jpg', content_type: 'image/jpg')
+jacket1.save!
+
+# file56 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/31/c3/31c39de59e8a211a7653c25fd158ddc7e8b8b49f.jpg],origin[dam],category[men_jeans_slim],type[LOOKBOOK],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file57 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/15/ed/15ed420fa8e0fe74c107f9e1620f290447abaabe.jpg],origin[dam],category[men_jeans_slim],type[LOOKBOOK],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# file58 = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/81/65/8165668289603f5ecc3b91f56632228c36d3c315.jpg],origin[dam],category[men_jeans_slim],type[DESCRIPTIVESTILLLIFE],res[x],hmver[1]&call=url[file:/product/fullscreen]')
+# jeans2 = Item.new(name: 'Jeans', brand: 'H&M', description: '5-pocket jeans in washed denim with a regular waist, zip fly, and slim legs.', min_price: 100, max_price: 200, user: gheorghe)
+# jeans2.pictures.attach(io: file31, filename: 'jeans2.jpg', content_type: 'image/jpg')
+# jeans2.pictures.attach(io: file32, filename: 'jeans2.jpg', content_type: 'image/jpg')
+# jeans2.pictures.attach(io: file33, filename: 'jeans2.jpg', content_type: 'image/jpg')
+# jeans2.save!
 
 # file4 = URI.open('https://cdn11.bigcommerce.com/s-qb5zncdqc6/images/stencil/2048x2048/products/5840/11417/womenssimplepantsblack__49371.1578586139.jpg?c=2')
 # pants = Item.new(name: 'Pants', brand: 'Prada', description: 'Bought these on a market in Bangkok and paid alot of money, they are not fake the guy said.', min_price: 250, max_price: 1000, user: felix)
