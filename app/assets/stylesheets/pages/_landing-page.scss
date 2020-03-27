@@ -3,20 +3,21 @@
   background-size: cover;
   background-position: 45% 55%;
   position: relative;
-  height: 500px;
+  height: 450px;
   width: 100% auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: $light-blue;
 }
 
-h2 {
-  font-size: 48px;
-  color: black;
-  font-style: italic;
-  color: $dark-blue;
-  text-align: center;
-  padding: 20px;
-  font-family: $large-font;
-}
+// h2 {
+//   font-size: 48px;
+//   color: black;
+//   font-style: italic;
+//   color: $dark-blue;
+//   text-align: center;
+//   padding: 20px;
+//   font-family: $large-font;
+// }
