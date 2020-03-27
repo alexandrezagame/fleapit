@@ -23,7 +23,11 @@
     </div>
     <div class="btn-group-vertical vertical-button">
         <button class="button" href="#">Matches</button>
-        <button class="button" href="#"><%= link_to 'Swipe', items_path %></button>
+        <% if current_user.items.size > 0 %>
+        <%= link_to 'Swipe', items_path, class:"button" %>
+        <% else %>
+        <%= link_to 'Upload', new_item_path, class:"button" %>
+        <% end %>
     </div>
     <div class="navbar-logo">
         <%= render 'shared/logo' %>
