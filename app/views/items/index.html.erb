@@ -6,7 +6,8 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-12">
                 <h1 style="text-align: center;">Your items</h1>
-                <% @items.each do |item| %>
+                <div class="carousel">
+                <% @items.each_with_index do |item, index| %>
                 <div class="card-trip">
                     <div class="card-information">
                         <%= link_to '', edit_item_path(item), class:"fas fa-cog setting-wheel" %>
@@ -19,49 +20,40 @@
                         <p>$
                             <%= item.min_price %>
                         </p>
-                        <p>-</p>
+
                         <p>$
                             <%= item.max_price %>
                         </p>
+                        <p><%= link_to 'Swipe this item', potential_matches_item_path(item)  %></p>
                     </div>
-                    <div class="image-items">
-                        <% item.pictures.each do |picture| %>
-                        <%= cl_image_tag picture.key, class: "items-image" %>
-                        <% end %>
+                    <div id="carousel<%=index%>" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <% item.pictures.each_with_index do |picture, index| %>
+                            <li data-target="carousel<%=index%>" data-slide-to="<%=index%>" class="<%= 'active' if index == 0 %>"></li>
+                            <% end %>
+                        </ol>
+                        <div class="carousel-inner">
+                            <% item.pictures.each_with_index do |picture, index| %>
+                            <div class="carousel-item <%= 'active' if index == 0 %>">
+                                <%= cl_image_tag picture.key, class: "items-image d-block" %>
+                            </div>
+                            <% end %>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel<%=index%>" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel<%=index%>" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
+                    <%# link_to 'Swipe this item', potential_matches_item_path(item)  %>
                 </div>
-                <%= link_to 'SWIPE WITH THIS ITEM', potential_matches_item_path(item)  %>
                 <% end %>
-                <%= link_to 'Upload an item', new_item_path  %>
+                </div>
+                <%# link_to 'Upload an item', new_item_path  %>
             </div>
         </div>
     </div>
-</div>
-
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="..." alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>

@@ -2,18 +2,45 @@
   float: right;
 }
 
+
+// -----------------CAROUSEL-------------------------------------
+.carousel {
+  width: 500px;
+  // height: 300px;
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  // flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+
+.items-image {
+  width: 300px;
+  height: 300px;
+  // margin: 0px 15px;
+  object-fit: cover;
+  flex: 1;
+}
+
+// ------------------ITEM CARDS ON THE OTHER PAGE-----------------
+.voting {
+  padding: 10px;
+  border-top: 1px solid #FEFEFE;
+}
+
 .image-items {
   display: flex;
-  justify-content: space-around;
   padding: 10px 0px;
   width: 100%;
+  object-fit: contain;
 }
 
 .image-items > img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   margin: 0px 15px;
-  object-fit: contain;
   flex: 1;
 }
 
@@ -74,10 +101,10 @@
   background-color: white;
 }
 
-.items-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-}
+// .items-container {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     flex-grow: 1;
+// }

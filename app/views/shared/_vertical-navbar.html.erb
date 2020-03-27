@@ -9,16 +9,20 @@
     <%= cl_image_tag current_user.avatar.key, class: "avatar-xl-large" %>
     <div class="profile-infos">
       <h3><%= current_user.username %></h3>
-      <img src="noun_ranking_1987379.png" alt="">
       <h3><%= current_user.location %></h3>
     </div>
   </div>
   <div class="row justify-content-around">
-    <button class="button-small" href="#">Category</button>
-    <button class="button-small" href="#">Location</button>
+      <button class="button-small" href="#">Category</button>
+      <button class="button-small" href="#">Location</button>
   </div>
   <div class="btn-group-vertical vertical-button">
-    <button class="button" href="#">Matches</button>
-    <button class="button" href="#">Swipe</button>
+      <button class="button" href="#">Matches</button>
+      <button class="button" href="#">Swipe</button>
+      <button class="button" href="#"><%= link_to 'Upload', new_item_path  %></button>
+  </div>
+  <div class="navbar-logo">
+      <%= render 'shared/logo' %>
   </div>
 </div>
+
