@@ -15,13 +15,19 @@ class ItemsController < ApplicationController
   def like
     @wanted_item = Item.find(params[:item_id])
     @my_item = Item.find(params[:my_item])
-    redirect_to potential_matches_item_path(@my_item), alert: "LIKE"
+    respond_to do |format|
+      format.html { redirect_to potential_matches_item_path(@my_item), alert: "LIKE" }
+      format.js
+    end
   end
 
   def dislike
     @not_wanted_item = Item.find(params[:item_id])
     @my_item = Item.find(params[:my_item])
-    redirect_to potential_matches_item_path(@my_item), alert: "DISLIKE"
+    respond_to do |format|
+      format.html { redirect_to potential_matches_item_path(@my_item), alert: "DISLIKE" }
+      format.js
+    end
   end
 
   def create
