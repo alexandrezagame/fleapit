@@ -9,7 +9,7 @@
                 <h1 style="text-align: center;">Choose which item to swipe with!</h1>
                 <% @items.each_with_index do |item, index| %>
                 <div class="card-trip d-flex">
-                    <div class="card-information">
+                    <div class="carousel-card-information">
                         <%= link_to '', edit_item_path(item), class:"fas fa-edit", id:"edit-button" %>
 
                         <h2>
