@@ -4,15 +4,30 @@
 
 .voting {
   padding: 10px;
-  border-top: 1px solid grey;
+  border-top: 1px solid #FEFEFE;
+}
+
+// -----------------CAROUSEL-------------------------------------
+.carousel {
+  width: 500px;
+  height: 300px;
 }
 
 .image-items {
   display: flex;
-  justify-content: space-around;
   padding: 10px 0px;
-  width: 100%;
+  // width: 100%;
 }
+
+.items-image {
+  width: 300px;
+  height: 300px;
+  // margin: 0px 15px;
+  object-fit: cover !important;
+  // flex: 1;
+}
+
+// ------------------ITEM CARDS ON THE OTHER PAGE-----------------
 .image-items > img {
   width: 200px;
   height: 200px;

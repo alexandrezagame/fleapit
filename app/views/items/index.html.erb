@@ -6,6 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-12">
                 <h1 style="text-align: center;">Your items</h1>
+                <div class="carousel">
                 <% @items.each_with_index do |item, index| %>
                 <div class="card-trip">
                     <div class="card-information">
@@ -33,7 +34,7 @@
                         <div class="carousel-inner">
                             <% item.pictures.each_with_index do |picture, index| %>
                             <div class="carousel-item <%= 'active' if index == 0 %>">
-                                <%= cl_image_tag picture.key, class: "items-image d-block w-30" %>
+                                <%= cl_image_tag picture.key, class: "items-image d-block" %>
                             </div>
                             <% end %>
                         </div>
@@ -49,6 +50,7 @@
                     <%= link_to 'SWIPE WITH THIS ITEM', potential_matches_item_path(item)  %>
                 </div>
                 <% end %>
+                </div>
                 <%= link_to 'Upload an item', new_item_path  %>
             </div>
         </div>
