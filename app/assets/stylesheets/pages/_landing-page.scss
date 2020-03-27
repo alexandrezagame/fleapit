@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: 45% 55%;
   position: relative;
-  height: 450px;
+  height: calc(100vh - 100px - 100px);
   width: 100% auto;
   display: flex;
   flex-direction: column;
@@ -21,3 +21,7 @@
 //   padding: 20px;
 //   font-family: $large-font;
 // }
+
+.content {
+  min-height: calc(100vh - 100px);
+}
