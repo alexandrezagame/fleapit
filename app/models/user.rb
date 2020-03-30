@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :username, presence: true
   has_one_attached :avatar
   has_many :items
+  has_many :messages, dependent: :destroy
 end
