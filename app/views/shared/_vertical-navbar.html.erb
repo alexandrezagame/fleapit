@@ -1,4 +1,5 @@
 <div class="vertical-navbar">
+
   <div class="row justify-content-between p-3">
     <%= render 'shared/wheel' %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,19 +9,37 @@
   <div class="text-center">
     <%= cl_image_tag current_user.avatar.key, class: "avatar-xl-large" %>
     <div class="profile-infos">
-      <h3><%= current_user.username %></h3>
-      <h3><%= current_user.location %></h3>
+
+    <div class="row justify-content-between p-3">
+        <%= render 'shared/wheel' %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
-  </div>
-  <div class="row justify-content-around">
-      <button class="button-small" href="#">Category</button>
-      <button class="button-small" href="#">Location</button>
-  </div>
-  <div class="btn-group-vertical vertical-button">
-      <button class="button" href="#">Matches</button>
-      <button class="button" href="#">Swipe</button>
-      <button class="button" href="#"><%= link_to 'Upload', new_item_path  %></button>
-  </div>
+    <div class="text-center">
+        <%= cl_image_tag current_user.avatar.key, class: "avatar-xl-large" %>
+        <div class="profile-infos">
+            <h5>
+                <%=  current_user.username %>
+            </h5>
+            <!--       <img src="noun_ranking_1987379.png" alt=""> -->
+            <h6>
+                <%= current_user.location %>
+            </h6>
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <button class="button-small" href="#">Category</button>
+        <button class="button-small" href="#">Location</button>
+    </div>
+    <div class="btn-group-vertical vertical-button">
+        <button class="button" href="#">Matches</button>
+        <% if current_user.items.size > 0 %>
+        <%= link_to 'Swipe', items_path, class:"button" %>
+        <% else %>
+        <%= link_to 'Upload', new_item_path, class:"button" %>
+        <% end %>
+    </div>
   <div class="navbar-logo">
       <%= render 'shared/logo' %>
   </div>

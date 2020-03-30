@@ -6,18 +6,19 @@
     <div class="col-8">
         <h1 style="text-align: center;">Show items from other users</h1>
           <%  @items.each do |i| %>
-            <div class="card-trip">
+            <div data-item-id="<%= i.id %>" class="card-trip">
               <div class="card-information">
+                <div class="item-owner d-flex">
+                  <%= cl_image_tag i.user.avatar.key, class: "avatar" %>
+                  <div class="user-details">
+                    <h6><%= i.user.username %></h6>
+                    <h6><%= i.user.location %></h6>
+                  </div>
+                </div>
+                <div class="item-info">
                 <h3>  <%= i.name %> </h3>
-                <%= i.description %>
-                <%= i.min_price %>
-                <%= i.max_price %>
-                <br>
-                <%= i.user.username %>
-                <%= cl_image_tag i.user.avatar.key, class: "avatar-xl-large" %>
-                <div class="voting">
-                <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger" %>
-                <%= link_to 'like', item_like_path(i, my_item: @my_item), class:"btn btn-success" %>
+                <p><%= i.description %></p>
+                <p><%= i.min_price %> | <%= i.max_price %></p>
                 </div>
               </div>
               <div class="image-items">
@@ -25,6 +26,10 @@
                   <%= cl_image_tag picture.key, class: "items-image" %>
                 <% end %>
               </div>
+                <div class="voting">
+                <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger", remote: true  %>
+                <%= link_to 'like', item_like_path(i, my_item: @my_item), class:"btn btn-success", remote: true %>
+                </div>
             </div>
           <% end %>
         <%# link_to 'show page button', item_path(item) %>

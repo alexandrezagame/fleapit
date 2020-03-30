@@ -1,8 +1,63 @@
 .form-container {
   flex-grow: 1;
-  padding: 50px;
+  padding: 50px 0px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container a {
+  color: black;
+}
+
+.form-control {
+  border: 1px solid #0e0000;
+  border-radius: 4px
 }
 
 .form-container h1 {
-  padding: 30px;
+  padding: 15px;
+  font-family: $font;
+
 }
+
+.new_item {
+  padding: 20px;
+  background-color: white;
+  box-shadow: none;
+}
+
+.form-card {
+  width: 500px;
+}
+
+.form-button {
+display: flex;
+justify-content: space-between;
+}
+
+.upload-photo {
+  border: none;
+  padding: 15px 2px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.destroy-button {
+  float: right;
+}
+
+.delete-button{
+  float: right;
+}
+
+
+.form-top h5 {
+    display: flex;
+    justify-content: center;
+}
+
+

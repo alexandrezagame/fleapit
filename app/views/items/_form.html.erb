@@ -5,5 +5,8 @@
     <%= f.input :min_price %>
     <%= f.input :max_price %>
     <%= f.input :pictures, as: :file, input_html: { class: 'd-none', multiple: true }, label_html: { class: 'upload-photo'}, label: '📷 Upload photos' %>
-    <%= f.submit %>
+    <div class="form-button">
+    <%= link_to 'Back', items_path, class: "button" %>
+    <%= f.submit class: "button" %>
+    </div>
   <% end %>
