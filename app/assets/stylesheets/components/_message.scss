@@ -8,6 +8,7 @@
   border-bottom-width: 0;
   max-height: calc(100vh - 70px - 45px - 61px - 30px);
   overflow: scroll;
+  width: 500px;
 }
 
 .message {
@@ -36,6 +37,7 @@
   padding: 10px;
   background-color: #ffffff;
   margin-bottom: 20px;
+  width: 500px;
   border: 1px solid #ececec;
 }
 .message_content {
@@ -56,6 +58,7 @@ input.form-control {
   background-color: #4F2F4C;
   color: white;
   padding: 10px 20px;
+  width: 500px;
   margin-top: 10px;
   h4 {
     margin: 0;
