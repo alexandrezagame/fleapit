@@ -1,26 +1,23 @@
 .home-banner {
-  background-image: asset-url("banner-image.jpg");
+  background-image: asset-url("background-image1.jpeg");
   background-size: cover;
   background-position: 45% 55%;
   position: relative;
-  height: calc(100vh - 100px - 100px);
+  height: calc(100vh - 50px - 50px);
   width: 100% auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $light-blue;
+  background-color: $light-pink;
+  font-family: $font;
+  color: white;
 }
 
-// h2 {
-//   font-size: 48px;
-//   color: black;
-//   font-style: italic;
-//   color: $dark-blue;
-//   text-align: center;
-//   padding: 20px;
-//   font-family: $large-font;
-// }
+
+.home-banner h1 {
+  color: white;
+}
 
 .content {
   min-height: calc(100vh - 100px);

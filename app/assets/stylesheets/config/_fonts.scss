@@ -2,12 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Raleway:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap');
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
-$font: 'Roboto', sans-serif;
-$large-font: 'Roboto', sans-serif;
+// $font: 'Roboto', sans-serif;
+$font: 'Raleway', sans-serif;
+$large-font: 'Montserrat', sans-serif;
 $logo-font: 'Open Sans', sans-serif;
+$card-color: white;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
