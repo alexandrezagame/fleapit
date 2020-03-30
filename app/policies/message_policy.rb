@@ -1,4 +1,4 @@
-class ChatRoomPolicy < ApplicationPolicy
+class MessagePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -8,10 +8,6 @@ class ChatRoomPolicy < ApplicationPolicy
   end
 
   def create?
-    !user.nil? #if user is not nil, creates true
-  end
-
-  def show?
     !user.nil? #if user is not nil, creates true
   end
 end
