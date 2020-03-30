@@ -17,18 +17,33 @@ class ItemsController < ApplicationController
     @wanted_item = Item.find(params[:item_id])
     @my_item = Item.find(params[:my_item])
     @wanted_item.liked_by @my_item
-    @wanted_item.vote_registered?
-    respond_to do |format|
-      format.html { redirect_to potential_matches_item_path(@my_item), alert: "LIKE" }
-      format.js
+    # @wanted_item.vote_registered? #nest in if statement, check documentation
+    # Step 1: Save wanted item
+    # @wanted_item.save
+    # Step 2: Check if my item was liked
+    if @my_item.liked @wanted_item
+      @match = Match.new()
+    # Step 3: If so, create new match
+    # Step 4: Store my_item.id and wanted_item.id as item_id and other_item_id
+      @match.item = @my_item
+      @match.other_item = @wanted_item
+      @match.matched_date = Time.now
+    # Step 5: Save match
+      @match.save!
+        #popup notification ITS A MATCH (clickable -> to matches view index)
     end
+      respond_to do |format|
+        format.html { redirect_to potential_matches_item_path(@my_item), alert: "LIKE" }
+        format.js
+      end
   end
 
   def dislike
     @not_wanted_item = Item.find(params[:item_id])
     @my_item = Item.find(params[:my_item])
     @not_wanted_item.disliked_by @my_item
-    @not_wanted_item.vote_registered?
+    # @not_wanted_item.vote_registered? #check if u need line
+    # @not_wanted_item.save
     respond_to do |format|
       format.html { redirect_to potential_matches_item_path(@my_item), alert: "DISLIKE" }
       format.js
