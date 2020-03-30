@@ -2,7 +2,6 @@
 
 .navbar{
   justify-content: space-between;
-  background-color: white !important;
   padding: 15px 30px;
   height: 100px;
 }
@@ -21,7 +20,8 @@
 }
 
 .nav-background {
-  background-image: linear-gradient(#ec6b637a, #ffffff);
+  // background-image: linear-gradient($light-pink, #ffffff);
+  background-color: $light-pink;
 }
 
 .dropdown-menu-right {

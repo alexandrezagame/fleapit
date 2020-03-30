@@ -1,0 +1,36 @@
+
+.landing-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 300px;
+  text-align: center;
+  background-color: $light-pink;
+  color: $font-color;
+  font-family: $font;
+}
+
+.landing-cards {
+  display: flex;
+}
+
+.card {
+  margin: 20px;
+  border-radius: 4px;
+  padding: 30px;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+}
+
+.card img {
+  padding: 15px;
+  font-size: 30px;
+}
+
+.card-body a {
+  margin: 15px;
+}
+
+.card-body {
+  color: $font-color;
+}
