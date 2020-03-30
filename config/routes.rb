@@ -9,5 +9,10 @@ Rails.application.routes.draw do
       get 'potential_matches'
     end
   end
+
+  resources :chat_rooms, only: [ :show, :create ] do
+    resources :messages, only: [ :create ]
+  end
+
   resources :matches, only: [:create]
 end
