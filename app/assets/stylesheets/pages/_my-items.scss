@@ -2,9 +2,13 @@
   float: right;
 }
 
-.items-container h3 {
-  color: black;
-  padding: 30px;
+.items-container {
+  padding: 50px;
+}
+
+.items-container h5 {
+  font-family: $font;
+  padding: 0px;
 }
 
 .items-button {
