@@ -1,9 +1,14 @@
+.container a {
+  color: black;
+}
+
 .form-login {
-  background: white;
+  background-color: white;
   padding: 10px 20px;
   margin-top: 20px;
   border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20);
+  margin: 50px;
   h2 {
     font-size: 25px;
     font-weight: bold;
@@ -15,3 +20,13 @@
     margin-bottom: 20px
   }
 }
+
+
+
+// input.form-control {
+//   background: white !important;
+// }
+
+// input.form-control:focus {
+//   background: white !important;
+// }
