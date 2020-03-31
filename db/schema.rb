@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_30_140112) do
+ActiveRecord::Schema.define(version: 2020_03_31_084748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,8 +62,22 @@ ActiveRecord::Schema.define(version: 2020_03_30_140112) do
     t.bigint "other_item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user1_id"
+    t.bigint "user2_id"
     t.index ["item_id"], name: "index_matches_on_item_id"
     t.index ["other_item_id"], name: "index_matches_on_other_item_id"
+    t.index ["user1_id"], name: "index_matches_on_user1_id"
+    t.index ["user2_id"], name: "index_matches_on_user2_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "chat_room_id"
+    t.string "content"
+    t.bigint "user_id"
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -109,6 +123,10 @@ ActiveRecord::Schema.define(version: 2020_03_30_140112) do
   add_foreign_key "items", "users"
   add_foreign_key "matches", "items"
   add_foreign_key "matches", "items", column: "other_item_id"
+
+  add_foreign_key "matches", "users", column: "user1_id"
+  add_foreign_key "matches", "users", column: "user2_id"
+
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
 end
