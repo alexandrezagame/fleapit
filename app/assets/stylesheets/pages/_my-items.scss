@@ -75,8 +75,33 @@
   text-align: center;
 }
 
+.carousel-card-information-bis {
+  width: 80%;
+  text-align: center;
+  padding: 1px;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $card-color;
+  font-family: $font;
+  position: relative;
+  border-left: 1px solid #8080802b
+}
+
 .carousel-card-information {
   width: 50%;
+  text-align: center;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $card-color;
+  font-family: $font;
+  position: relative;
+  padding: 10px;
+}
+
+.carousel-card-information-user {
+  width: 20%;
   text-align: center;
   padding: 1px;
   // display: flex;
@@ -116,7 +141,7 @@
 
 .voting {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
   border-top: 1px solid #FEFEFE;
 }
@@ -124,8 +149,10 @@
 .image-items {
   display: flex;
   padding: 10px 0px;
+  // width: 100%;
+  object-fit: contain;
   width: 100%;
-  object-fit: cover;
+  height: 100%;
 }
 
 .image-items > img {
