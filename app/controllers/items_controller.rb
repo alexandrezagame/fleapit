@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
     # Step 5: Save match
       @match.save!
         #popup notification ITS A MATCH (clickable -> to matches view index)
+        #trigger modal if @match.exist
     end
       respond_to do |format|
         format.html { redirect_to potential_matches_item_path(@my_item), alert: "LIKE" }

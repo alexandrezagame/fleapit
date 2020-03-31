@@ -1,2 +1,11 @@
+const displayModal = (modal, matchid) => {
+  console.log(matchid);
+  const potentialmatch = document.querySelector("#potentialMatches");
+  potentialmatch.insertAdjacentHTML('beforeend', modal);
+  $(`#matchModal-${matchid}`).modal();
+}
 
+<% if @match %>
+  displayModal('<%= j render "matches/matchmodal", match: @match %>', '<%= @match.id %>');
+<% end %>
 document.querySelector("[data-item-id='<%= @wanted_item.id %>']").remove();
