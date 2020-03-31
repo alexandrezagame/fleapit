@@ -7,6 +7,6 @@
     <%= f.input :pictures, as: :file, input_html: { class: 'd-none', multiple: true }, label_html: { class: 'upload-photo'}, label: '📷 Upload photos' %>
     <div class="form-button">
     <%= link_to 'Back', items_path, class: "button" %>
-    <%= f.submit class: "button" %>
+    <%= f.button :submit, class: "button" %>
     </div>
   <% end %>
