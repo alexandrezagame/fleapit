@@ -25,27 +25,32 @@ nina = User.create!(email: 'nina@gmail.com', username: 'Nina', password: '123456
 nina.avatar.attach(io: nina_image, filename: 'nina.jpg', content_type: 'image/jpg')
 nina.save!
 
-
 daniel_image = URI.open('https://ca.slack-edge.com/T02NE0241-UTHJ33JTZ-40af3f73854a-512')
 daniel = User.create!(email: 'daniel@gmail.com', username: 'Daniel', password: '123456', location: 'Stockholm')
 daniel.avatar.attach(io: daniel_image, filename: 'daniel.jpg', content_type: 'image/jpg')
 daniel.save!
 
+raphaelle_image = URI.open('https://avatars2.githubusercontent.com/u/60267962?s=460&v=4')
+raphaelle = User.create!(email: 'raphaelle@gmail.com', username: 'raphaelle', password: '123456', location: 'Stockholm')
+raphaelle.avatar.attach(io: raphaelle_image, filename: 'raphaelle.jpg', content_type: 'image/jpg')
+raphaelle.save!
+
+madeleine_image = URI.open('https://avatars0.githubusercontent.com/u/60282525?s=460&u=16f073fa53b604e80266e4a0dd684512d3a29b10&v=4')
+madeleine = User.create!(email: 'madeleine@gmail.com', username: 'madeleine', password: '123456', location: 'Stockholm')
+madeleine.avatar.attach(io: madeleine_image, filename: 'madeleine.jpg', content_type: 'image/jpg')
+madeleine.save!
+
+sander_image = URI.open('https://avatars3.githubusercontent.com/u/53917461?v=4')
+sander = User.create!(email: 'sander@gmail.com', username: 'sander', password: '123456', location: 'Stockholm')
+sander.avatar.attach(io: sander_image, filename: 'sander.jpg', content_type: 'image/jpg')
+sander.save!
+
+gheorghe_image = URI.open('https://avatars1.githubusercontent.com/u/58052561?v=4')
+gheorghe = User.create!(email: 'gheorghe@gmail.com', username: 'gheorghe', password: '123456', location: 'Stockholm')
+gheorghe.avatar.attach(io: gheorghe_image, filename: 'gheorghe.jpg', content_type: 'image/jpg')
+gheorghe.save!
 
 
-
-
-
-
-
-# madeleine = User.create!(email: 'madeleine@gmail.com', username: 'Madeleine', password: '123456')
-# madeleine.save!
-# sander = User.create!(email: 'sander@gmail.com', username: 'Sander', password: '123456')
-# sander.save!
-# george = User.create!(email: 'george@gmail.com', username: 'George', password: '123456')
-# george.save!
-# raphaelle = User.create!(email: 'raphaelle@gmail.com', username: 'Raphaelle', password: '123456')
-# raphaelle.save!
 # yves = User.create!(email: 'yves@gmail.com', username: 'Yves', password: '123456')
 # yves.save!
 # claire = User.create!(email: 'claire@gmail.com', username: 'Claire', password: '123456')
@@ -157,29 +162,110 @@ jeans1.pictures.attach(io: file32, filename: 'jeans1.jpg', content_type: 'image/
 jeans1.pictures.attach(io: file33, filename: 'jeans1.jpg', content_type: 'image/jpg')
 jeans1.save!
 
-# file4 = URI.open('https://cdn11.bigcommerce.com/s-qb5zncdqc6/images/stencil/2048x2048/products/5840/11417/womenssimplepantsblack__49371.1578586139.jpg?c=2')
-# pants = Item.new(name: 'Pants', brand: 'Prada', description: 'Bought these on a market in Bangkok and paid alot of money, they are not fake the guy said.', min_price: 250, max_price: 1000, user: felix)
-# pants.pictures.attach(io: file4, filename: 'pants.jpg', content_type: 'image/jpg')
-# pants.save!
+file34 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585562339/Clothes/fk26946_cmintpowde_3_jgmnhu.jpg')
+file35 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585562336/Clothes/fk26946_cmintpowde1_flqdov.jpg')
+file36 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585562255/Clothes/fk26946_cmintpowde_exemmo.jpg')
+dress1 = Item.new(name: 'Dress', brand: 'Filippa K', description: 'The Milla Dress is made in a softly draped recycled chiffon. It has a regular fit and clean lines, with a covered button placket at the front. A belt cinches the waist through loops at the side seams, above side slits that have a delicate finish. The shoulder seam has a classic fit, and the dress has a round neck and knee-length hem.', min_price: 850, max_price: 1200, user: madeleine)
+dress1.pictures.attach(io: file34, filename: 'dress1.jpg', content_type: 'image/jpg')
+dress1.pictures.attach(io: file35, filename: 'dress1.jpg', content_type: 'image/jpg')
+dress1.pictures.attach(io: file36, filename: 'dress1.jpg', content_type: 'image/jpg')
+dress1.save!
 
-# file5 = URI.open('https://tres-bien.com/media/catalog/product/cache/4df57bf4c117b7e5982dee8955fd82cb/s/t/sterling-ruby_191205_035.jpg')
-# pants = Item.new(name: 'Pants', brand: 'Prada', description: 'Bought these on a market in Bangkok and paid alot of money, they are not fake the guy said.', min_price: 250, max_price: 1000, user: felix)
-# pants.pictures.attach(io: file5, filename: 'pants.jpg', content_type: 'image/jpg')
-# pants.save!
+file37 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585566846/Home%20decoration/sultan-kontinentals%C3%A4ng-120x200-vit-1233063_gboye3.jpg')
+file38 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585566762/Home%20decoration/sultan-kontinentals%C3%A4ng-120x200-vit-1443893_ngrwka.jpg')
+file39 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585566758/Home%20decoration/sultan-kontinentals%C3%A4ng-120x200-vit-1235667_no94m9.jpg')
+bed1 = Item.new(name: 'Bed', brand: 'Mio', description: 'Sultan Continental bed 120x200 white', min_price: 5000, max_price: 7000, user: madeleine)
+bed1.pictures.attach(io: file37, filename: 'bed1.jpg', content_type: 'image/jpg')
+bed1.pictures.attach(io: file38, filename: 'bed1.jpg', content_type: 'image/jpg')
+bed1.pictures.attach(io: file39, filename: 'bed1.jpg', content_type: 'image/jpg')
+bed1.save!
 
+file40 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585574727/Clothes/hmgoepprod2_hamplz.jpg')
+file41 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585574726/Clothes/hmgoepprod1_sqisnp.jpg')
+file42 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585574723/Clothes/hmgoepprod_gq5xr3.jpg')
+dress2 = Item.new(name: 'Dress', brand: 'H&M', description: 'Knee-length dress in cotton slub jersey. V-neck, butterfly sleeves, and gathered, elasticized seam at waist.', min_price: 150, max_price: 300, user: raphaelle)
+dress2.pictures.attach(io: file40, filename: 'dress2.jpg', content_type: 'image/jpg')
+dress2.pictures.attach(io: file41, filename: 'dress2.jpg', content_type: 'image/jpg')
+dress2.pictures.attach(io: file42, filename: 'dress2.jpg', content_type: 'image/jpg')
+dress2.save!
 
-# file6 = URI.open('https://cdn11.bigcommerce.com/s-rxzabllq/images/stencil/1280x1280/products/910/18045/Kids-Plain-Poly-Fit-Quick_Dry-Tshirt-red__13799.1567089094.jpg?c=2')
-# tshirt = Item.new(name: 'T-Shirt', brand: 'H&M', description: 'Just take it..', min_price: 250, max_price: 1000, user: alex)
-# tshirt.pictures.attach(io: file6, filename: 'tshirt.jpg', content_type: 'image/jpg')
-# tshirt.save!
+file43 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585577845/Clothes/hmgoepprodraphaelle1_fyef5f.jpg')
+file44 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585577848/Clothes/hmgoepprodraphaelle2_vaspmi.jpg')
+file45 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585577842/Clothes/hmgoepprod3_mmcr0s.jpg')
+dress3 = Item.new(name: 'Dress', brand: 'H&M', description: 'Calf-length dress in airy, woven viscose fabric. Round neckline with decorative gathers, opening at back of neck with button, and wide, elbow-length raglan sleeves.', min_price: 200, max_price: 350, user: raphaelle)
+dress3.pictures.attach(io: file43, filename: 'dress3.jpg', content_type: 'image/jpg')
+dress3.pictures.attach(io: file44, filename: 'dress3.jpg', content_type: 'image/jpg')
+dress3.pictures.attach(io: file45, filename: 'dress3.jpg', content_type: 'image/jpg')
+dress3.save!
 
-# file7 = URI.open('https://images.canadagoose.com/image/upload/w_1333,c_scale,f_auto,q_auto:best/v1547146139/product-image/2078M_11_d.jpg')
-# jacket = Item.new(name: 'Jacket', brand: 'Gucci', description: 'Vintage gucci from fall season 1995.', min_price: 250, max_price: 1000, user: nina)
-# jacket.pictures.attach(io: file7, filename: 'jacket.jpg', content_type: 'image/jpg')
-# jacket.save!
+file46 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585579046/Home%20decoration/vicenza_l4_1_raphaelle2_jv5oyh.jpg')
+file47 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585579049/Home%20decoration/vicenza-s-sizes_raphaelle3_y21oap.jpg')
+file48 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585579044/Home%20decoration/vicenza_l3_1_raphaelle1_czv5yh.jpg')
+mirror1 = Item.new(name: 'Mirror', brand: 'English decorations', description: 'Fantastic wooden framed mirror with beveled glass. There are two pairs of hooks fitted to back of the mirror frame for easy fixing to the wall.', min_price: 3000, max_price: 4500, user: raphaelle)
+mirror1.pictures.attach(io: file46, filename: 'mirror1.jpg', content_type: 'image/jpg')
+mirror1.pictures.attach(io: file47, filename: 'mirror1.jpg', content_type: 'image/jpg')
+mirror1.pictures.attach(io: file48, filename: 'mirror1.jpg', content_type: 'image/jpg')
+mirror1.save!
 
-# file8 = URI.open('https://s3.amazonaws.com/nikeinc/assets/84925/Sp19_BB_Nike_Adapt_20181218_NIKE0538_Detail5_rectangle_1600.jpg?1547068102')
-# shoes = Item.new(name: 'Shoe', brand: 'Louboutin', description: 'Worn three times, no damages!', min_price: 250, max_price: 1000, user: felix)
-# shoes.pictures.attach(io: file8, filename: 'shoes.jpg', content_type: 'image/jpg')
-# shoes.save!
+file49 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585580469/Clothes/hmgoepprodSander_yxqlds.jpg')
+file50 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585580405/Clothes/hmgoepprodander1_rfczdj.jpg')
+file51 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585580473/Clothes/hmgoepprodSander2_sas3yt.jpg')
+sweatshirt1 = Item.new(name: 'Printed sweatshirt', brand: 'H&M', description: 'Top in soft, printed cotton jersey with a round, ribbed neckline and long sleeves with ribbing at the cuffs.', min_price: 150, max_price: 200, user: sander)
+sweatshirt1.pictures.attach(io: file49, filename: 'sweatshirt1.jpg', content_type: 'image/jpg')
+sweatshirt1.pictures.attach(io: file50, filename: 'sweatshirt1.jpg', content_type: 'image/jpg')
+sweatshirt1.pictures.attach(io: file51, filename: 'sweatshirt1.jpg', content_type: 'image/jpg')
+sweatshirt1.save!
 
+file52 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585581805/Clothes/hmgoepprodGeorge_oxddhi.jpg')
+file53 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585581807/Clothes/hmgoepprodGeorge1_svhfwg.jpg')
+file54 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585581811/Clothes/hmgoepprodGeorge2_xabg1c.jpg')
+jacket1 = Item.new(name: 'Hooded jacket', brand: 'H&M', description: 'Lightweight sweatshirt jacket with a double-layered, drawstring hood. Zipper at front, side pockets, and ribbing at cuffs and hem.', min_price: 100, max_price: 250, user: gheorghe)
+jacket1.pictures.attach(io: file52, filename: 'jacket1.jpg', content_type: 'image/jpg')
+jacket1.pictures.attach(io: file53, filename: 'jacket1.jpg', content_type: 'image/jpg')
+jacket1.pictures.attach(io: file54, filename: 'jacket1.jpg', content_type: 'image/jpg')
+jacket1.save!
+
+file55 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585582664/Clothes/hmgoepprodGeorge3_whjon6.jpg')
+file56 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585582670/Clothes/hmgoepprodGeorge5_fyufwx.jpg')
+file57 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585582666/Clothes/hmgoepprodGeorge4_ti88eh.jpg')
+jeans2 = Item.new(name: 'Jeans', brand: 'H&M', description: '5-pocket jeans in washed denim with a regular waist, zip fly, and slim legs.', min_price: 200, max_price: 300, user: gheorghe)
+jeans2.pictures.attach(io: file55, filename: 'jeans2.jpg', content_type: 'image/jpg')
+jeans2.pictures.attach(io: file56, filename: 'jeans2.jpg', content_type: 'image/jpg')
+jeans2.pictures.attach(io: file57, filename: 'jeans2.jpg', content_type: 'image/jpg')
+jeans2.save
+
+file58 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585583692/Electronics/APPLE-iPhone-11George_orqwvc.png')
+file59 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585583695/Electronics/APPLE-iPhone-11George1_nzydnb.png')
+file60 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585583698/Electronics/APPLE-iPhone-11George2_cz2fmp.png')
+mobilephone1 = Item.new(name: 'Iphone 11', brand: 'Media Markt', description: 'Open your eyes and experience the beauty of the world from a new perspective with the iPhone 11 and its 6.1 inch screen. The phone comes with a fast chip and advanced technology.', min_price: 8000, max_price: 9000, user: gheorghe)
+mobilephone1.pictures.attach(io: file58, filename: 'mobilephone1.jpg', content_type: 'image/jpg')
+mobilephone1.pictures.attach(io: file59, filename: 'mobilephone1.jpg', content_type: 'image/jpg')
+mobilephone1.pictures.attach(io: file60, filename: 'mobilephone1.jpg', content_type: 'image/jpg')
+mobilephone1.save!
+
+file61 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585585097/Outdoors/Cannondale-Bike_nrs3my.jpg')
+file62 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585585102/Outdoors/Cannondale-Bike2_mb3m6w.jpg')
+file63 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585585099/Outdoors/Cannondale-Bike1_u16tpr.jpg')
+bike1 = Item.new(name: 'Bike', brand: 'Sigma sports', description: 'All-New, BallisTec Carbon frame takes stiff and light to new levels, allowing you to convert more of your power into speed for some seriously explosive sprints. Carbon Fork featuring improved SAVE technology, engineered to absorb road shock and vibration by pairing precise tube shapes with sophisticated carbon layering. Shimano Ultegra 2x11 Speed Drivetrain provides super-fast, smooth and accurate gear changes. Shimano Ultegra hydraulic disc brakes give you complete peace of mind with their reliable and consistent stopping power in all conditions, thanks to sophisticated heat management and pad technology. HollowGram KNØT carbon wheelset paired with Vittoria Rubino Pro 700 x 25c tyres, are super light allowing for blistering acceleration and incredibly responsive handling.', min_price: 20000, max_price: 25000, user: madeleine)
+bike1.pictures.attach(io: file61, filename: 'bike1.jpg', content_type: 'image/jpg')
+bike1.pictures.attach(io: file62, filename: 'bike1.jpg', content_type: 'image/jpg')
+bike1.pictures.attach(io: file63, filename: 'bike1.jpg', content_type: 'image/jpg')
+bike1.save!
+
+file64 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585586564/Home%20decoration/darth-vader_sander1_bf8bhq.jpg')
+file65 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585586572/Home%20decoration/darth-vader_sander3_ubco4x.jpg')
+file66 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585586567/Home%20decoration/darth-vader_sander2_vrppg6.jpg')
+darthvader = Item.new(name: 'Darth Vader', brand: 'Side show', description: 'Sideshow, in partnership with Legacy Effects, is proud to unveil the latest in our series of 1:1 scale, life-sized collectibles – Darth Vader! Standing over 7 feet tall this large Darth Vader figure, and movie accurate statue, makes for an imposing and utterly jaw-dropping museum-quality showpiece that is sure to be the pride and joy of any Star Wars fan!', min_price: 20000, max_price: 25000, user: sander)
+darthvader.pictures.attach(io: file64, filename: 'darthvader.jpg', content_type: 'image/jpg')
+darthvader.pictures.attach(io: file65, filename: 'darthvader.jpg', content_type: 'image/jpg')
+darthvader.pictures.attach(io: file66, filename: 'darthvader.jpg', content_type: 'image/jpg')
+darthvader.save!
+
+file67 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585588720/Accessories/IMG_7062sander1_hecmou.jpg')
+file68 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585588723/Accessories/_MG_6996sander2_f9qdp6.jpg')
+file69 = URI.open('https://res.cloudinary.com/dgfsnlcab/image/upload/v1585588726/Accessories/_MG_6997sander3_vzofy2.jpg')
+wristwatch = Item.new(name: 'Wrist watch', brand: 'Super hero stuff', description: 'Make Papa Palpatine proud when you rock this officially licensed Star Wars Stormtrooper Watch. Made from stainless steel, this epic Star Wars wristwatch features a loyal Stormtrooper on its face and looks mighty snazzy while keeping track of your blaster practice.', min_price: 2000, max_price: 3000, user: sander)
+wristwatch.pictures.attach(io: file67, filename: 'wristwatch.jpg', content_type: 'image/jpg')
+wristwatch.pictures.attach(io: file68, filename: 'wristwatch.jpg', content_type: 'image/jpg')
+wristwatch.pictures.attach(io: file69, filename: 'wristwatch.jpg', content_type: 'image/jpg')
+wristwatch.save!
