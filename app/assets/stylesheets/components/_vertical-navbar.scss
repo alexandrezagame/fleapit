@@ -2,12 +2,52 @@
   width: 300px;
   height: 100vh;
   background-color: $light-pink;
-  padding: 10px;
   position: sticky;
   top: 0;
   padding: 10px;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
 }
+
+@media(max-width: 576px) {
+  .vertical-navbar {
+    width: 100px;
+    padding: 5px;
+  }
+
+  .vertical-navbar .menu-hamburger {
+  width: 40px;
+  height: 40px;
+  color: #0c5c65;
+  }
+
+  .vertical-navbar .avatar-xl-large {
+    height: 60px;
+    width: 60px;
+  }
+  .vertical-navbar .button-small {
+    padding: 10px 5px;
+    width: 70px !important;
+    margin: 5px auto;
+  }
+  .vertical-navbar .button {
+    padding: 10px 5px;
+    width: 70px !important;
+  }
+}
+// @media(max-width: 768px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+
+// Responsive breakpoints
+// default: Extra small devices (Portrait phone 👉 less than 576px)
+// sm: Small devices (Landscape phone 👉 576px and up)
+// md: Medium devices (Tablet 👉 768px and up)
+// lg: Large devices (Desktops 👉 992px and up)
+// xl: Extra large devices (Large desktops 👉 1200px and up)
+
 
 .vertical-navbar h5 {
   margin: 0px;
