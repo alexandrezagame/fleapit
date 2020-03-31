@@ -8,12 +8,33 @@
 }
 
 .items-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height:200px;
+}
+
+.items-button-zero {
+  width: 900px;
+  margin: 0px auto;
+  // text-align: center;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+
+.zero-items-paragraph {
   width: 900px;
   margin: 0px auto;
   text-align: center;
   display: flex;
   justify-content: center;
+  padding-top: 300px;
   align-items: center;
+  color: grey;
+  font-size: 20px;
+  font-family: $font;
 }
 
 .items-container {
