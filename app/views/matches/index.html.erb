@@ -1,0 +1,97 @@
+<div class="big-container">
+    <div>
+        <%= render 'shared/vertical-navbar' %>
+    </div>
+<div class="row justify-content-center">
+    <div class="col-8">
+        <h1 style="text-align: center;">YOUR MATCHES</h1>
+          <%  @matches.each do |match| %>
+            <%  if match.user1_id == current_user.id %>
+              <!-- user1 div cards, section left, my item info, on right, match info of other user -->
+            <div class="card-trip d-flex">
+              <!-- my item section -->
+              <div data-item-id="<%= match.item_id %>" class="my-item-info">
+                <div class="item-owner">
+                    <div class="user-details">
+                      <h6><%= match.user1.username %></h6>
+                      <h6><%= match.user1.location %></h6>
+                    </div>
+                </div>
+                <div class="item-info">
+                    <h3>  <%= match.item.name %> </h3>
+                    <p><%= match.item.description %></p>
+                  <!-- insert total price from the range -->
+                </div>
+
+                <div class="image-items">
+                    <%= cl_image_tag match.item.pictures.first.key, class: "items-image" %>
+                </div>
+              </div>
+
+              <!-- other item section -->
+              <div data-item-id="<%= match.other_item_id %>" class="card-information">
+                <div class="item-owner d-flex">
+                  <%= cl_image_tag match.user2.avatar.key, class: "avatar" %>
+                  <div class="user-details">
+                    <h6><%= match.user2.username %></h6>
+                    <h6><%= match.user2.location %></h6>
+                  </div>
+                </div>
+                <div class="item-info">
+                <h3>  <%= match.other_item.name %> </h3>
+                <p><%= match.other_item.description %></p>
+                <!-- insert total price from the range -->
+                </div>
+              </div>
+              <div class="image-items">
+                    <%= cl_image_tag match.other_item.pictures.first.key, class: "items-image" %>
+              </div>
+            </div>
+            <% else %>
+              <div class="card-trip d-flex">
+                <div data-item-id="<%= match.other_item_id %>" class="my-item-info">
+
+                  <div class="item-owner">
+                    <div class="user-details">
+                      <h6><%= match.user2.username %></h6>
+                      <h6><%= match.user2.location %></h6>
+                    </div>
+                  </div>
+                  <div class="item-info">
+                    <h3>  <%= match.other_item.name %> </h3>
+                    <p><%= match.other_item.description %></p>
+                  <!-- insert total price from the range -->
+                  </div>
+
+                  <div class="image-items">
+                      <%= cl_image_tag match.other_item.pictures.first.key, class: "items-image" %>
+                  </div>
+                </div>
+
+
+
+              <div data-item-id="<%= match.item_id %>" class="card-information">
+                <div class="item-owner d-flex">
+                  <%= cl_image_tag match.user1.avatar.key, class: "avatar" %>
+                  <div class="user-details">
+                    <h6><%= match.user1.username %></h6>
+                    <h6><%= match.user1.location %></h6>
+                  </div>
+                </div>
+                <div class="item-info">
+                <h3>  <%= match.item.name %> </h3>
+                <p><%= match.item.description %></p>
+                <!-- insert total price from the range -->
+                </div>
+              </div>
+              <div class="image-items">
+                    <%= cl_image_tag match.item.pictures.first.key, class: "items-image" %>
+              </div>
+              </div>
+            <% end %>
+        <%# link_to 'show page button', item_path(item) %>
+        <% end %>
+    </div>
+</div>
+</div>
+

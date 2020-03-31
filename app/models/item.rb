@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   acts_as_voter
   belongs_to :user
   has_many_attached :pictures
+  has_many :matches
 
   validates :name, presence: true
   validates :brand, presence: true

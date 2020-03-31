@@ -28,7 +28,7 @@
               </div>
                 <div class="voting">
                 <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger", remote: true  %>
-                <%= link_to 'like', item_like_path(i, my_item: @my_item), class:"btn btn-success", remote: true %>
+                <%= link_to 'like', item_like_path(i, my_item: @my_item), class:"btn btn-success", remote: false %>
                 </div>
             </div>
           <% end %>

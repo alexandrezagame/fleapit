@@ -9,5 +9,5 @@ Rails.application.routes.draw do
       get 'potential_matches'
     end
   end
-  resources :matches, only: [:create]
+  resources :matches, only: [:create, :index]
 end

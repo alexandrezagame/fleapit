@@ -21,11 +21,14 @@ class ItemsController < ApplicationController
     # Step 1: Save wanted item
     # @wanted_item.save
     # Step 2: Check if my item was liked
-    if @my_item.liked @wanted_item
+    if @wanted_item.liked? @my_item
       @match = Match.new()
     # Step 3: If so, create new match
     # Step 4: Store my_item.id and wanted_item.id as item_id and other_item_id
       @match.item = @my_item
+      @match.user1 = @my_item.user
+      @match.user2 = @wanted_item.user
+      #defining matches
       @match.other_item = @wanted_item
       @match.matched_date = Time.now
     # Step 5: Save match
