@@ -1,3 +1,8 @@
+.chatboxcontainer {
+  display: flex;
+  background-color: $light-gray;
+}
+
 .messages {
   font-size: 14px;
   color: #868686;
@@ -6,9 +11,10 @@
   border: 1px solid #ececec;
   border-top: none;
   border-bottom-width: 0;
-  max-height: calc(100vh - 70px - 45px - 61px - 30px);
+  height: 350px;
+  // max-height: calc(100vh - 70px - 45px - 61px - 30px);
   overflow: scroll;
-  width: 500px;
+  width: 400px;
 }
 
 .message {
@@ -37,7 +43,7 @@
   padding: 10px;
   background-color: #ffffff;
   margin-bottom: 20px;
-  width: 500px;
+  width: 400px;
   border: 1px solid #ececec;
 }
 .message_content {
@@ -55,10 +61,10 @@ input.form-control {
   }
 }
 .chat-header {
-  background-color: #4F2F4C;
+  background-color: #97D6D6;
   color: white;
   padding: 10px 20px;
-  width: 500px;
+  width: 400px;
   margin-top: 10px;
   h4 {
     margin: 0;
