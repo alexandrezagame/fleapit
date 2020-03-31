@@ -1,3 +1,41 @@
 .my-item-info {
   border: 1px solid black;
 }
+
+.matches-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.matches-pairs {
+  display: flex;
+  position: relative;
+
+}
+
+.card img {
+  height: 320px;
+  width: 320px;
+  object-fit: cover;
+}
+
+.exchange-button {
+  height: 40px;
+  width: 100px;
+  font-size: 30px;
+  position: absolute;
+  right: 59%;
+  z-index: 2;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  top: 44%;
+}
+
+
+
