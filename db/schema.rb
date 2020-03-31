@@ -80,16 +80,6 @@ ActiveRecord::Schema.define(version: 2020_03_31_084748) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "chat_room_id"
-    t.string "content"
-    t.bigint "user_id"
-    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -123,10 +113,8 @@ ActiveRecord::Schema.define(version: 2020_03_31_084748) do
   add_foreign_key "items", "users"
   add_foreign_key "matches", "items"
   add_foreign_key "matches", "items", column: "other_item_id"
-
   add_foreign_key "matches", "users", column: "user1_id"
   add_foreign_key "matches", "users", column: "user2_id"
-
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
 end
