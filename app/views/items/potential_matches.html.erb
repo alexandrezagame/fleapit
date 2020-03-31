@@ -12,7 +12,7 @@
           <%  @items.each do |i| %>
             <div data-item-id="<%= i.id %>" class="card-trip">
 
-              <div class="card-trip d-flex">
+              <div class="card-trip card-trip d-flex">
                 <div class="carousel-card-information-user">
                 <%= cl_image_tag i.user.avatar.key, class: "avatar" %>
                   <h6><%= i.user.username %></h6>
@@ -21,7 +21,11 @@
 
                 <div class="carousel-card-information-bis">
                     <h3>  <%= i.name %> </h3>
-                    <p><%= i.description %></p>
+                    <div class="scrollbar square scrollbar-lady-lips thin">
+                    <div class="force-overflow">
+                      <p><%= i.description %></p>
+                    </div>
+                    </div>
                     <p><%= i.min_price %> | <%= i.max_price %></p>
                   <div class="voting">
                     <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger", remote: true  %>
