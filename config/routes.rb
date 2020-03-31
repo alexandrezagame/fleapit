@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => "/cable"
   devise_for :users
   root to: 'pages#home'
 
@@ -9,5 +10,10 @@ Rails.application.routes.draw do
       get 'potential_matches'
     end
   end
+  
   resources :matches, only: [:create, :index]
+  
+  resources :chat_rooms, only: [ :show, :create ] do
+    resources :messages, only: [ :create ]
+  end
 end

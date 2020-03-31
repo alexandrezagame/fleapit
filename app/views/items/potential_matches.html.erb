@@ -4,7 +4,7 @@
     </div>
 <div class="row justify-content-center">
     <div class="col-8">
-        <h1 style="text-align: center;">Show items from other users</h1>
+        <h3 style="text-align: center;">Show items from other users</h3>
           <%  @items.each do |i| %>
             <div data-item-id="<%= i.id %>" class="card-trip">
               <div class="card-information">
@@ -23,12 +23,13 @@
               </div>
               <div class="image-items">
                 <% i.pictures.each do |picture| %>
-                  <%= cl_image_tag picture.key, class: "items-image" %>
+                <%= cl_image_tag picture.key, class: "items-image" %>
                 <% end %>
               </div>
                 <div class="voting">
                 <%= link_to 'Dislike', item_dislike_path(i, my_item: @my_item), class:"btn btn-danger", remote: true  %>
-                <%= link_to 'like', item_like_path(i, my_item: @my_item), class:"btn btn-success", remote: false %>
+                <%= link_to 'like', item_like_path(i, my_item: @my_item), class:"btn btn-success", remote: true %>
+                <%= link_to 'CHAT', chat_rooms_path, method: :post %>
                 </div>
             </div>
           <% end %>

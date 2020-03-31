@@ -2,9 +2,9 @@
 
 .navbar{
   justify-content: space-between;
-  background-color: white !important;
   padding: 15px 30px;
   height: 100px;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
 }
 
 .navbar .navbar-collapse {
@@ -21,7 +21,8 @@
 }
 
 .nav-background {
-  background-image: linear-gradient(#ec6b637a, #ffffff);
+  // background-image: linear-gradient($light-pink, #ffffff);
+  background-color: $light-pink;
 }
 
 .dropdown-menu-right {
@@ -32,7 +33,7 @@
 }
 
 .dropdown-item {
-    color: $dark-blue;
+    color: $black;
     &:hover {
     background-color: white;
     color: $main-color;

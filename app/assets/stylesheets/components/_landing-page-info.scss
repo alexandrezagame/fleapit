@@ -1,0 +1,40 @@
+.card-footer {
+  background: transparent;
+  border-top: 0px;
+}
+
+.landing-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  background-color: $light-pink;
+  color: $font-color;
+  font-family: $font;
+}
+
+.landing-cards {
+  display: flex;
+}
+
+.card {
+  margin: 20px;
+  border-radius: 4px;
+  // padding: 30px;
+  // box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+}
+
+.card img {
+  padding: 15px;
+  font-size: 30px;
+}
+
+
+.card-body {
+  color: $font-color;
+}
+
+
