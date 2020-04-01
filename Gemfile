@@ -20,6 +20,7 @@ gem 'pundit'
 gem 'acts_as_votable'
 
 
+
 #search function
 
 #cloudinary / dotenv security

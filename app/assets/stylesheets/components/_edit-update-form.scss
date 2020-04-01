@@ -1,6 +1,6 @@
 .form-container {
   flex-grow: 1;
-  padding: 50px 0px;
+  padding: 0px 0px;
   box-shadow: none;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,6 @@
 .form-container a {
   color: black;
 }
-
 
 .form-control {
   border: 1px solid #0e0000;
@@ -27,6 +26,7 @@
   padding: 20px;
   background-color: white;
   box-shadow: none;
+  margin: 30px;
 }
 
 .form-card {
@@ -55,9 +55,10 @@ justify-content: space-between;
 }
 
 
-.form-top h5 {
+.form-container h5 {
     display: flex;
     justify-content: center;
+    padding-top: 30px;
 }
 
 
