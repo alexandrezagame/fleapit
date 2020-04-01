@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many_attached :pictures
   has_many :matches
+  belongs_to :category
 
   validates :name, presence: true
   validates :brand, presence: true
