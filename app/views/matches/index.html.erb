@@ -40,7 +40,7 @@
           </div>
 
 
-        <%= link_to '<i class="fas fa-exchange-alt"></i>'.html_safe, chat_rooms_path, method: :post, class: "button exchange-button"  %>
+  <%= link_to '<i class="fas fa-exchange-alt"></i>'.html_safe, match_chat_rooms_path(match), method: :post, class: "button exchange-button"  %>
 
               <!-- other item section -->
 
@@ -111,7 +111,8 @@
         </div>
     </div>
 
-  <%= link_to '<i class="fas fa-exchange-alt"></i>'.html_safe, chat_rooms_path, method: :post, class: "button exchange-button"  %>
+
+  <%= link_to '<i class="fas fa-exchange-alt"></i>'.html_safe, match_chat_rooms_path(match), method: :post, class: "button exchange-button"  %>
 
 <!-- current_user wanted item-->
       <div class="card mb-3" style="max-width: 600px;">

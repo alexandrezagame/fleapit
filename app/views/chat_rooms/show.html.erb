@@ -4,19 +4,36 @@
     <div>
         <%= render 'shared/vertical-navbar' %>
     </div>
+<div class="card mb-3" style="max-height: 600px;">
+  <div class="col-md-6 col-lg-6">
+    <%= cl_image_tag @match.item.pictures.first.key, class: "card-img-match" %>
+  </div>
+
+  <div class="col-md-6 col-lg-6">
+    <%= cl_image_tag @match.other_item.pictures.first.key, class: "card-img-match" %>
+  </div>
+</div>
     <div class="form-container">
         <div class="chat-header">
+          <div>
+            <h1>
+            <%= @match.user1.username %>
+            </h1>
+            <h1>
+            <%= @match.user2.username %>
+            </h1>
+          </div>
             <h4>#
-                <%= @chat_room.name %>
+                <%= @match_chat_room_messages.name %>
             </h4>
         </div>
         <div class="messages">
-            <% @chat_room.messages.each do |message| %>
+            <% @match_chat_room_messages.messages.each do |message| %>
             <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
             <% end %>
         </div>
         <div id="create-message">
-            <%= simple_form_for [ @chat_room, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
+            <%= simple_form_for [ @match_chat_room_messages, Message.new ], url: match_chat_room_messages_path(chat_room_id: params[:id], match_id: params[:match_id]),remote: true, html: {autocomplete: "off" } do |f| %>
             <%= f.input :content, label: false, placeholder:"press enter to send the message" %>
             <% end %>
         </div>
@@ -35,7 +52,7 @@ const scrollLastMessageIntoView = () => {
     }
 }
 scrollLastMessageIntoView();
-App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create({ channel: 'ChatRoomsChannel', chat_room_id: <%= @chat_room.id %> }, {
+App['chat_room_<%= params[:id] %>'] = App.cable.subscriptions.create({ channel: 'ChatRoomsChannel', chat_room_id: <%= params[:id] %> }, {
     received: (data) => {
         if (data.current_user_id !== <%= current_user.id %>) {
             const messagesContainer = document.querySelector('.messages');
