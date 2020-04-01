@@ -7,6 +7,7 @@ require "open-uri"
 #   Character.create(name: 'Luke', movie: movies.first)
 Match.destroy_all
 Item.destroy_all
+Category.destroy_all
 User.destroy_all
 
 puts "creating users"
@@ -53,14 +54,14 @@ gheorghe.save!
 
 puts "creating categories"
 
-category1 = Category.create(name: "Home & decorations")
-category2 = Category.create(name: "Women's clothes")
-category3 = Category.create(name: "Men's clothes")
-category4 = Category.create(name: "Accessories")
-category5 = Category.create(name: "Electronics")
-category6 = Category.create(name: "Outdoors")
-category7 = Category.create(name: "Hobby")
-category8 = Category.create(name: "Tools")
+category1 = Category.create!(name: "Home & decorations")
+category2 = Category.create!(name: "Women clothes")
+category3 = Category.create!(name: "Men clothes")
+category4 = Category.create!(name: "Accessories")
+category5 = Category.create!(name: "Electronics")
+category6 = Category.create!(name: "Outdoors")
+category7 = Category.create!(name: "Hobby")
+category8 = Category.create!(name: "Tools")
 
 require "open-uri"
 puts "creating items"
