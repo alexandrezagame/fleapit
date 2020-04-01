@@ -57,7 +57,7 @@
 
                           <%# cl_image_tag match.user2.avatar.key, class: "avatar" %>
                           <h6>
-                              <%= match.user2.username %>
+                              <%= match.user2.username.capitalize %>
                           </h6>
                           <h6>
                               <%= match.user2.location %>
@@ -124,7 +124,7 @@
                   <div class="col-md-6 col-lg-6">
                       <div class="card-body">
                           <h6>
-                              <%= match.user1.username %>
+                              <%= match.user1.username.capitalize %>
                           </h6>
                           <h6>
                               <%= match.user1.location %>
