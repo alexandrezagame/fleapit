@@ -1,5 +1,6 @@
 // find the card that was clicked on
 
-document.querySelector("[data-item-id='<%= @not_wanted_item.id %>']").remove();
+window.location.replace("<%= potential_matches_item_path(@my_item) %>");
+// document.querySelector("[data-item-id='<%= @not_wanted_item.id %>']").remove();
 
 // remove the html of the card
