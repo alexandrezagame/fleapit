@@ -59,7 +59,12 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    category = Category.find_by(name: params[:item][:category])
+    @item = Item.new(name: params[:item][:name], description: params[:item][:description], brand: params[:item][:brand], min_price: params[:item][:min_price], max_price: params[:item][:max_price], category: category)
+      params[:item][:pictures].each do |picture|
+        @item.pictures.attach(picture)
+      end
+    # @item = Item.new(item_params)
     @item.user = current_user
     authorize @item #pundit
     if @item.save!
@@ -102,6 +107,6 @@ class ItemsController < ApplicationController
   # end
 
   def item_params
-    params.require(:item).permit(:name, :description, :brand, :min_price, :max_price, pictures: [])
+    params.require(:item).permit(:name, :description, :category, :brand, :min_price, :max_price, pictures: [])
   end
 end
