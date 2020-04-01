@@ -3,14 +3,18 @@ class ItemsController < ApplicationController
   # before_action :set_item, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, except: :home
   def index
-    @items = policy_scope(Item).order(created_at: :desc) #pundit
+    @items = policy_scope(Item).order(created_at: :desc)
   end
 
   def potential_matches #showing potential matches from member routes
     # @items = Item.where.not(user: current_user)
     @my_item = Item.find(params[:id])
-    @items = Item.where.not(user: current_user).where.not(id: @my_item.find_voted_items)
-    authorize @items #pundit
+    @item = Item.where.not(user: current_user).where.not(id: @my_item.find_voted_items).order('RANDOM()').first
+    if @item.nil?
+      skip_authorization
+    else
+      authorize @item
+    end
   end
 
   def like

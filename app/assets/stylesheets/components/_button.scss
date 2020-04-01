@@ -1,8 +1,11 @@
 // This button is used on our landing-page for sign-up (landing-page-banner.hmtl.erb)
-
+.form-container .button {
+    color: white;
+}
 .button {
     background-color: $main-color;
     color: white;
+    width: 150px;
     font-family: $font;
     font-size: 14px;
     padding: 10px 15px;
@@ -34,6 +37,10 @@
     }
 }
 
+// .button:active {
+//   background-color: $main-color;
+//   transform: translateY(2px);
+// }
 
 
 

@@ -1,0 +1,35 @@
+#slider {
+  height: 5px;
+  margin-top: 50px;
+}
+
+
+.noUi-handle {
+  border-radius: 50% !important;
+background-color: white !important;
+text-decoration: none;
+    background: #FFF;
+    cursor: default;
+    box-shadow: inset 0 0 1px #FFF;
+}
+
+
+.noUi-connect {
+    background: black !important;
+}
+
+.noUi-horizontal .noUi-handle, .noUi-vertical .noUi-handle {
+    background: white !important;
+    color: solid white !important;
+    text-decoration: none !important;
+    margin-bottom: 10px !important;
+}
+
+.noUi-target.noUi-horizontal .noUi-tooltip {
+    background-color: black !important;
+}
+
+.noUi-handle:before, .noUi-handle:after {
+    background: transparent !important;
+}
+

@@ -9,7 +9,7 @@
         <%= cl_image_tag current_user.avatar.key, class: "avatar-xl-large" %>
         <div class="profile-infos">
             <h5>
-                <%=  current_user.username %>
+                <%=  current_user.username.capitalize %>
             </h5>
             <!--       <img src="noun_ranking_1987379.png" alt=""> -->
             <h6>
@@ -24,9 +24,9 @@
     <div class="btn-group-vertical vertical-button">
         <%= link_to 'My Matches', matches_path, class:"button" %>
         <% if current_user.items.size > 0 %>
-        <%= link_to 'Swipe', items_path, class:"button" %>
+        <%= link_to 'Exchange', items_path, class:"button" %>
         <% else %>
-        <%= link_to 'Upload', new_item_path, class:"button" %>
+        <%= link_to 'Upload', new_item_path, class: "button" %>
         <% end %>
     </div>
 <!--     <div class="navbar-logo">
