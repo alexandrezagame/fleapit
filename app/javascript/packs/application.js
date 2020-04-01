@@ -1,7 +1,9 @@
 // import { testFunction } from '../components/scroll';
 import "bootstrap";
 import $ from 'jquery';
-import noUiSlider from 'nouislider';
+import { createSlider } from '../components/price-slider';
 window.$ = $;
 window.jQuery = $;
+
+createSlider();
 
