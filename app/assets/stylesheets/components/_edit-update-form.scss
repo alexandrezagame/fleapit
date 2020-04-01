@@ -1,3 +1,17 @@
+
+#price-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 20px;
+}
+
+#lower-price {
+border: 1px solid black;
+}
+
+
+
 .form-container {
   flex-grow: 1;
   padding: 0px 0px;
