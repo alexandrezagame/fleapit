@@ -1,26 +1,40 @@
-
-
 <div class="chatboxcontainer">
+
     <div>
-        <%= render 'shared/vertical-navbar' %>
+      <%= render 'shared/vertical-navbar' %>
     </div>
-    <div class="form-container">
-        <div class="chat-header">
-            <h4>#
-                <%= @chat_room.name %>
-            </h4>
-        </div>
-        <div class="messages">
-            <% @chat_room.messages.each do |message| %>
-            <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
-            <% end %>
-        </div>
-        <div id="create-message">
-            <%= simple_form_for [ @chat_room, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
-            <%= f.input :content, label: false, placeholder:"press enter to send the message" %>
-            <% end %>
-        </div>
+<!-- <div class="super-container"> -->
+  <div class="items-chat">
+
+    <div class="row-item">
+      <%= cl_image_tag @match.item.pictures.first.key, class: "matched-cards" %>
+      <%= cl_image_tag @match.other_item.pictures.first.key, class: "matched-cards" %>
     </div>
+
+    <div class="form-container" id="matches-chat">
+      <div class="chat-header">
+          <h5>
+            <%= @match.user1.username.capitalize %>
+            |
+            <%= @match.user2.username.capitalize %>
+          </h5>
+          <p>
+            <% @match_chat_room_messages.name %>
+          </p>
+      </div>
+          <div class="messages">
+            <% @match_chat_room_messages.messages.each do |message| %>
+              <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+            <% end %>
+          </div>
+          <div id="create-message">
+            <%= simple_form_for [ @match_chat_room_messages, Message.new ], url: match_chat_room_messages_path(chat_room_id: params[:id], match_id: params[:match_id]),remote: true, html: {autocomplete: "off" } do |f| %>
+              <%= f.input :content, label: false, placeholder:"press enter to send the message" %>
+            <% end %>
+          </div>
+    </div>
+  </div>
+<!-- </div> -->
 </div>
 
 <% content_for :after_js do %>
@@ -35,7 +49,7 @@ const scrollLastMessageIntoView = () => {
     }
 }
 scrollLastMessageIntoView();
-App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create({ channel: 'ChatRoomsChannel', chat_room_id: <%= @chat_room.id %> }, {
+App['chat_room_<%= params[:id] %>'] = App.cable.subscriptions.create({ channel: 'ChatRoomsChannel', chat_room_id: <%= params[:id] %> }, {
     received: (data) => {
         if (data.current_user_id !== <%= current_user.id %>) {
             const messagesContainer = document.querySelector('.messages');
@@ -46,3 +60,4 @@ App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create({ channel
 })
 </script>
 <% end %>
+
