@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_084748) do
+ActiveRecord::Schema.define(version: 2020_04_01_135531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,11 +36,8 @@ ActiveRecord::Schema.define(version: 2020_03_31_084748) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "chat_rooms", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-  end
+# Could not dump table "chat_rooms" because of following StandardError
+#   Unknown type 'matches' for column 'references'
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -64,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_084748) do
     t.datetime "updated_at", null: false
     t.bigint "user1_id"
     t.bigint "user2_id"
+    t.integer "chatroom"
     t.index ["item_id"], name: "index_matches_on_item_id"
     t.index ["other_item_id"], name: "index_matches_on_other_item_id"
     t.index ["user1_id"], name: "index_matches_on_user1_id"

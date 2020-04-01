@@ -44,10 +44,41 @@
 .items-container {
   flex-grow: 1;
 }
+// -----------------MATCH CHAT CARD-------------------------------------
+
+.items-chat{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100rem;
+}
+
+.row-item {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.matched-cards {
+  // display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  height: 150px !important;
+  width: 200px;
+}
+
+#matches-chat {
+  padding-top: 0px !important;
+}
+// .super-container {
+//   width: 100rem;
+// }
 
 // -----------------CAROUSEL-------------------------------------
-
-
 
 
 .carousel {
@@ -75,8 +106,33 @@
   text-align: center;
 }
 
+.carousel-card-information-bis {
+  width: 80%;
+  text-align: center;
+  padding: 1px;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $card-color;
+  font-family: $font;
+  position: relative;
+  border-left: 1px solid #8080802b
+}
+
 .carousel-card-information {
   width: 50%;
+  text-align: center;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $card-color;
+  font-family: $font;
+  position: relative;
+  padding: 10px;
+}
+
+.carousel-card-information-user {
+  width: 20%;
   text-align: center;
   padding: 1px;
   // display: flex;
@@ -116,7 +172,7 @@
 
 .voting {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
   border-top: 1px solid #FEFEFE;
 }
@@ -124,8 +180,10 @@
 .image-items {
   display: flex;
   padding: 10px 0px;
+  // width: 100%;
+  object-fit: contain;
   width: 100%;
-  object-fit: cover;
+  height: 100%;
 }
 
 .image-items > img {

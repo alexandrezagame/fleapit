@@ -1,0 +1,16 @@
+<!-- Modal -->
+<div class="modal fade" id="matchModal-<%= match.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        YOU GOT A MATCH!
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Keep Swiping", potential_matches_item_path(item) %>
+        <%= link_to "Go to Match",  matches_path%>
+      </div>
+    </div>
+  </div>
+</div>

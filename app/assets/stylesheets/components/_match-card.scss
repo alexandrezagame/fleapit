@@ -1,3 +1,80 @@
 .my-item-info {
   border: 1px solid black;
 }
+
+.matches-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card-body p {
+  text-align: left;
+}
+
+.card-body h6 {
+  font-size: 80%;
+}
+
+.card-body h5 {
+  font-weight: bold;
+}
+
+.scrollbar {
+padding-right: 10px;
+// margin-left: 30px;
+float: left;
+height: 100px;
+width: 100%;
+background: #fff;
+overflow-y: scroll;
+margin-bottom: 25px;
+}
+.force-overflow {
+// min-height: 450px;
+}
+
+.scrollbar-primary::-webkit-scrollbar {
+width: 12px;
+background-color: #F5F5F5; }
+
+.scrollbar-primary::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: $main-color; }
+
+.scrollbar-primary {
+scrollbar-color: $main-color;
+}
+
+
+.matches-pairs {
+  display: flex;
+  position: relative;
+
+}
+
+.card img {
+  height: 320px;
+  width: 320px;
+  object-fit: contain;
+}
+
+.exchange-button {
+  height: 40px;
+  width: 100px;
+  font-size: 30px;
+  position: absolute;
+  right: 59%;
+  z-index: 2;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  top: 44%;
+}
+
+
+
