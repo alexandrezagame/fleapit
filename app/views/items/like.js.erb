@@ -3,9 +3,13 @@ const displayModal = (modal, matchid) => {
   const potentialmatch = document.querySelector("#potentialMatches");
   potentialmatch.insertAdjacentHTML('beforeend', modal);
   $(`#matchModal-${matchid}`).modal();
-}
+};
 
 <% if @match %>
-  displayModal('<%= j render "matches/matchmodal", match: @match %>', '<%= @match.id %>');
+  displayModal('<%= j render "matches/matchmodal", match: @match, item: @my_item %>', '<%= @match.id %>');
+  <% else %>
+  window.location.replace("<%= potential_matches_item_path(@my_item) %>");
 <% end %>
-document.querySelector("[data-item-id='<%= @wanted_item.id %>']").remove();
+
+
+// document.querySelector("[data-item-id='<%= @wanted_item.id %>']").remove();
