@@ -4,6 +4,13 @@
               <%= render 'shared/vertical-navbar', matches_count: @matches_count %>
           </div>
 
+    <% if @matches.size == 0 %>
+          <div class="zero-items-paragraph2">
+        <p>Hey <%= current_user.username  %>, it seems you don't have any matches yet.
+          <br>
+        </div>
+    <% else %>
+
   <div class="matches-container">
           <%  @matches.each do |match| %>
             <%  if match.user1_id == current_user.id %>
@@ -151,5 +158,6 @@
         <%# link_to 'show page button', item_path(item) %>
       <% end %>
   </div>
+  <% end %>
 </div>
 
