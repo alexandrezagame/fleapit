@@ -1,5 +1,4 @@
 <div class="big-container">
-
           <div>
               <%= render 'shared/vertical-navbar', matches_count: @matches_count %>
           </div>
@@ -31,73 +30,71 @@
                                   <%# match.user1.username %>
                               <!-- </h6>
                               <h6> -->
-                                  <%# match.user1.location %>
-                              <!-- </h6> -->
-                              <!-- <h3 class="card-text"> -->
-                                  <%# match.item.name %>
-                              <!-- </h3> -->
-                              <!-- <p class="card-text"> -->
-                                  <%# match.item.description %>
-                              <!-- </p> -->
-                              <!-- insert total price from the range -->
-                       <!--    </div>
+                        <%# match.user1.location %>
+                        <!-- </h6> -->
+                        <!-- <h3 class="card-text"> -->
+                        <%# match.item.name %>
+                        <!-- </h3> -->
+                        <!-- <p class="card-text"> -->
+                        <%# match.item.description %>
+                        <!-- </p> -->
+                        <!-- insert total price from the range -->
+                        <!--    </div>
                       </div> -->
-              </div>
-            </div>
-          </div>
-
-
-  <%= link_to '<i class="fas fa-exchange-alt"></i>'.html_safe, match_chat_rooms_path(match), method: :post, class: "button exchange-button"  %>
-
-              <!-- other item section -->
-
-<!-- daniel wanted item-->
-      <div class="card mb-3" style="max-width: 600px;">
-        <div data-item-id="<%= match.item_id %>">
-          <div class="row">
-                  <%# cl_image_tag match.user1.avatar.key, class: "avatar" %>
-                  <div class="col-md-6 col-lg-6">
-                      <%= cl_image_tag match.other_item.pictures.first.key, class: "card-img" %>
-                  </div>
-                  <div class="col-md-6 col-lg-6">
-                      <div class="card-body">
-
-                          <%# cl_image_tag match.user2.avatar.key, class: "avatar" %>
-                          <h6>
-                              <%= match.user2.username.capitalize %>
-                          </h6>
-                          <h6>
-                              <%= match.user2.location %>
-                          </h6>
-                          <h5 class="card-title">
-                              <%= match.other_item.name %>
-                          </h5>
-                          <div class="scrollbar square scrollbar-lady-lips thin">
-                          <div class="force-overflow">
-                          <p class="card-text">
-                              <%= match.other_item.description %>
-                          </p>
-                          </div>
-                          </div>
-                          <!-- insert total price from the range -->
-                      </div>
                     </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-            <% else %>
-
-<!-- current_user item-->
-  <div class="matches-pairs">
-    <div class="card mb-3" style="max-width: 400px;">
-        <div data-item-id="<%= match.other_item_id %>">
-            <div class="row">
-                <div class="col-md-12">
-                    <%= cl_image_tag match.other_item.pictures.first.key, class: "card-img" %>
                 </div>
-                <!-- <div class="col-md-8">
+            </div>
+            <%= link_to '<i class="fas fa-exchange-alt"></i>'.html_safe, match_chat_rooms_path(match), method: :post, class: "button exchange-button"  %>
+            <!-- other item section -->
+            <!-- daniel wanted item-->
+            <div class="match-card mb-3" style="max-width: 600px;">
+                <div data-item-id="<%= match.item_id %>">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6">
+                            <%= cl_image_tag match.other_item.pictures.first.key, class: "card-img" %>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card-body match-info">
+                                <div class="match-user-info">
+                                    <div>
+                                        <h6>
+                                            <%= match.user2.username.capitalize %>
+                                        </h6>
+                                        <h6>
+                                            <%= match.user2.location %>
+                                        </h6>
+                                    </div>
+                                    <div>
+                                        <%= cl_image_tag match.user2.avatar.key, class: "avatar" %>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">
+                                    <%= match.other_item.name %>
+                                </h5>
+                                <div class="scrollbar square scrollbar-lady-lips thin">
+                                    <div class="force-overflow">
+                                        <p class="card-text">
+                                            <%= match.other_item.description %>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- insert total price from the range -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% else %>
+        <!-- current_user item-->
+        <div class="matches-pairs">
+            <div class="match-card mb-3" style="max-width: 400px;">
+                <div data-item-id="<%= match.other_item_id %>">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <%= cl_image_tag match.other_item.pictures.first.key, class: "card-img" %>
+                        </div>
+                        <!-- <div class="col-md-8">
                       <div class="card-body">
                           <h6>
                               <%# match.user2.username %>
@@ -114,50 +111,54 @@
                           insert total price from the range
                       </div>
                 </div> -->
+                    </div>
+                </div>
+            </div>
+            <%= link_to '<i class="fas fa-exchange-alt"></i>'.html_safe, match_chat_rooms_path(match), method: :post, class: "button exchange-button"  %>
+            <!-- current_user wanted item-->
+            <div class="match-card mb-3" style="max-width: 600px;">
+                <div data-item-id="<%= match.item_id %>">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6">
+                            <%= cl_image_tag match.item.pictures.first.key, class: "card-img" %>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="card-body match-info">
+                                <div class="match-user-info">
+                                    <div>
+                                        <h6>
+                                            <%= match.user1.username.capitalize %>
+                                        </h6>
+                                        <h6>
+                                            <%= match.user1.location %>
+                                        </h6>
+                                    </div>
+                                    <div>
+                                        <%= cl_image_tag match.user1.avatar.key, class: "avatar" %>
+                                    </div>
+                                </div>
+                                <h5 class="card-title">
+                                    <%= match.item.name %>
+                                </h5>
+                                <div class="scrollbar square scrollbar-lady-lips thin">
+                                    <div class="force-overflow">
+                                        <p class="card-text">
+                                            <%= match.item.description %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- insert total price from the range -->
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-
-  <%= link_to '<i class="fas fa-exchange-alt"></i>'.html_safe, match_chat_rooms_path(match), method: :post, class: "button exchange-button"  %>
-
-<!-- current_user wanted item-->
-      <div class="card mb-3" style="max-width: 600px;">
-        <div data-item-id="<%= match.item_id %>">
-          <div class="row">
-                  <%# cl_image_tag match.user1.avatar.key, class: "avatar" %>
-                  <div class="col-md-6 col-lg-6">
-                      <%= cl_image_tag match.item.pictures.first.key, class: "card-img" %>
-                  </div>
-                  <div class="col-md-6 col-lg-6">
-                      <div class="card-body">
-                          <h6>
-                              <%= match.user1.username.capitalize %>
-                          </h6>
-                          <h6>
-                              <%= match.user1.location %>
-                          </h6>
-                          <h5 class="card-title">
-                              <%= match.item.name %>
-                          </h5>
-                          <div class="scrollbar square scrollbar-lady-lips thin">
-                          <div class="force-overflow">
-                          <p class="card-text">
-                              <%= match.item.description %>
-                          </p>
-                          </div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- insert total price from the range -->
-              </div>
-          </div>
-      </div>
-    </div>
-          <% end %>
+        <% end %>
         <%# link_to 'show page button', item_path(item) %>
+        <% end %>
+    </div>
       <% end %>
   </div>
   <% end %>
 </div>
-

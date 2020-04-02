@@ -55,10 +55,16 @@ letter-spacing: 0.5px;
 
 .card-body {
   color: $font-color;
+  float: right;
 }
 
-.card-title {
+.card-title1 {
 padding: 10px;
+}
+
+.card-body img {
+  height: 30px !important;
+  width: 30px !important;
 }
 
 

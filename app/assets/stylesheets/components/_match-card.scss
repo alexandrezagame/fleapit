@@ -1,13 +1,27 @@
+.match-info {
+  padding-left: 35px;
+}
+
+.match-user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 2px -2px gray;
+}
+
+
 .my-item-info {
   border: 1px solid black;
 }
 
 .matches-container {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   justify-content: center;
   align-content: center;
-  flex-direction: row;
+  // flex-direction: row;
   flex-wrap: wrap;
 }
 
@@ -54,10 +68,12 @@ scrollbar-color: $main-color;
 .matches-pairs {
   display: flex;
   position: relative;
+  justify-content: center;
+  align-items: center;
 
 }
 
-.card img {
+.match-card img {
   height: 320px;
   width: 320px;
   object-fit: contain;
@@ -68,13 +84,29 @@ scrollbar-color: $main-color;
   width: 100px;
   font-size: 30px;
   position: absolute;
-  right: 59%;
+  right: 56%;
   z-index: 2;
   justify-content: center;
   display: flex;
   align-items: center;
   top: 44%;
+  width: 120px;
 }
+
+.match-card {
+   display: flex;
+   background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+  // margin: 20px;
+  border-radius: 4px;
+  // box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+}
+
 
 
 
