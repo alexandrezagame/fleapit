@@ -1,7 +1,7 @@
 class MatchPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user1_id: user.id).or(Match.where(user2_id: user.id))
+      scope.where(user1_id: user.id).or(Match.where(user2_id: user.id)).where(exchanged: false)
       # matches = Match.all
       # matches_td = []
       # matches.each do |match|
