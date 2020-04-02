@@ -2,53 +2,59 @@
     <div>
         <%= render 'shared/vertical-navbar' %>
     </div>
-  <% if @item %>
+    <% if @item %>
     <div class="items-container">
-    <div class="row justify-content-center" id="potentialMatches">
-      <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-
-          <h5 style="text-align: center;">Pick an item to exchange for</h5>
-
-
-            <div data-item-id="<%= @item.id %>" class="card-trip">
-
-              <div class="card-trip card-trip d-flex">
-                <div class="carousel-card-information-user">
-                <%= cl_image_tag @item.user.avatar.key, class: "avatar" %>
-                  <h6><%= @item.user.username %></h6>
-                  <h6><%= @item.user.location %></h6>
-                </div>
-
-                <div class="carousel-card-information-bis">
-                    <h3>  <%= @item.name %> </h3>
-                    <div class="scrollbar square scrollbar-lady-lips thin">
-                    <div class="force-overflow">
-                      <p><%= @item.description %></p>
+        <div class="row justify-content-center" id="potentialMatches">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                <h5 style="text-align: center;">Pick an item to exchange for</h5>
+                <div data-item-id="<%= @item.id %>">
+                    <div class="matches-card-trip">
+                        <div class="match-image-items">
+                            <% @item.pictures.each do |picture| %>
+                            <%= cl_image_tag picture.key, class: "items-image" %>
+                            <% end %>
+                        </div>
+                        <div class="matches-card-information-bis">
+                            <div class="matches-top-card">
+                                <div>
+                                    <h5>
+                                        <%= @item.name.capitalize %>
+                                    </h5>
+                                    <h6>
+                                        <%= @item.user.location.capitalize %>
+                                    </h6>
+                                </div>
+                                <div class="matches-card-information-user">
+                                    <%= cl_image_tag @item.user.avatar.key, class: "avatar" %>
+                                    <h6>
+                                        <%= @item.user.username.capitalize %>
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="scrollbar square scrollbar-lady-lips thin" id="matches-scrollbar">
+                                <div class="force-overflow">
+                                    <p class="card-text">
+                                        <%= @item.description %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voting">
+                            <%= link_to '', item_dislike_path(@item, my_item: @my_item), class:"fas fa-heart-broken dislike-button", remote: true  %>
+                            <p>
+                              <%= @item.min_price %> - <%= @item.max_price %> kr
+                            </p>
+                            <%= link_to '', item_like_path(@item, my_item: @my_item), class:"fas fa-heart like-button", remote: true %>
+                        </div>
                     </div>
-                    </div>
-                    <p><%= @item.min_price %> - <%= @item.max_price %> kr</p>
-                  <div class="voting">
-                    <%= link_to 'Dislike', item_dislike_path(@item, my_item: @my_item), class:"btn btn-danger", remote: true  %>
-                    <%= link_to 'like', item_like_path(@item, my_item: @my_item), class:"btn btn-success", remote: true %>
-                  </div>
                 </div>
-              </div>
-
-              <div class="image-items">
-                <% @item.pictures.each do |picture| %>
-                <%= cl_image_tag picture.key, class: "items-image" %>
-                <% end %>
-              </div>
-
             </div>
-      </div>
+        </div>
     </div>
-    </div>
-  <% else %>
+    <% else %>
     <div>
-      <h1>No more items for this category..</h1>
-      <%= link_to 'Swipe with another item', items_path, alert: "No more items for this category.."  %>
+        <h1>No more items for this category..</h1>
+        <%= link_to 'Swipe with another item', items_path, alert: "No more items for this category.."  %>
     </div>
-  <% end %>
+    <% end %>
 </div>
-
