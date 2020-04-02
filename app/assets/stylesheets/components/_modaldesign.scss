@@ -1,0 +1,23 @@
+.modal-content {
+  border-radius: 4px;
+  background-color: $dark-blue;
+}
+
+.modal-header {
+  float: left;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-style: $large-font;
+  color: black;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+.modal-footer{
+  display: flex;
+  justify-content: space-between;
+}
