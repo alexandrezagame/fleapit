@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :set_matches
+  before_action :set_matches, except: [:home]
   include Pundit
   # Pundit: white-list approach.
   after_action :verify_authorized, except: [:index, :like, :dislike], unless: :skip_pundit?
@@ -14,7 +14,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_matches
-    @matches_count = Match.where(user1_id: current_user.id).or(Match.where(user2_id: current_user.id)).count
+    if current_user
+    @matches_count = Match.where(user1_id: current_user.id).or(Match.where(user2_id: current_user.id)).where(exchanged: false).count
+    end
   end
 
   def skip_pundit?
