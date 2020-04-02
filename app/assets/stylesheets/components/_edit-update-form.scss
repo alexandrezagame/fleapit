@@ -27,8 +27,11 @@ border: 1px solid black;
 }
 
 .form-control {
-  border: 1px solid #0e0000;
-  border-radius: 4px
+  border-radius: 4px;
+  border: 1px solid #ECECEC;
+  box-shadow: none;
+  font-size: 14px;
+  color: #868686;
 }
 
 .form-container h1 {

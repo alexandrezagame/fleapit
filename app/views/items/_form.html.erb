@@ -5,12 +5,14 @@
     <%= f.input :category, :collection => ["Home & decorations", "Women clothes", "Men clothes", "Accessories", "Electronics", "Outdoors", "Hobby", "Tools"] %>
     <%= f.input :min_price, as: :hidden, input_html: { value: "min" }, id: "minPriceInput" %>
     <%= f.input :max_price, as: :hidden, input_html: { value: "max" }, id: "maxPriceInput" %>
+    <p class="select required">Price range <abbr title="required">*</abbr></p>
     <div id="slider"></div>
     <div id="price-container">
+      <div class="price-display">
     <div id="lowerPrice"></div>
-    <p>-</p>
-    <div id="upperPrice"></div>
-    <p>SEK</p>
+    <h6> - </h6>
+    <div id="upperPrice"></div><h6> kr</h6>
+  </div>
     </div>
 
     <%= f.input :pictures, as: :file, input_html: { class: 'd-none', multiple: true }, label_html: { class: 'upload-photo'}, label: '📷 Upload photos' %>

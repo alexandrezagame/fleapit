@@ -3,13 +3,16 @@ import noUiSlider from 'nouislider';
 
 const slider = document.getElementById('slider');
 
+
+
 const createSlider = () => {
     noUiSlider.create(slider, {
-    start: [20, 80],
+    start: [200, 400],
+    step: 50,
     connect: true,
     range: {
         'min': 0,
-        'max': 1000
+        'max': 3000
     }
 });
     slider.noUiSlider.on('set', updateInput); {
@@ -34,6 +37,7 @@ const updatePrice = (minPrice, maxPrice) => {
   minPriceHTML.innerHTML = `<p>${parseInt(minPrice, 10).toFixed()}</p>`
   maxPriceHTML.innerHTML = `<p>${parseInt(maxPrice, 10).toFixed()}</p>`
 }
+
 
 export { createSlider };
 // Binding signature

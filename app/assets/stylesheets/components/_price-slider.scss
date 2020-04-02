@@ -1,8 +1,48 @@
 #slider {
-  height: 5px;
-  margin-top: 50px;
+      box-shadow: none !important;
+      background-color: white !important;
+      height: 5px;
 }
 
+.price-display {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-display h6 {
+  white-space: pre !important;
+  padding-top: 8px;
+  font-size: 16px;
+}
+
+#lowerPrice {
+    width: 60px;
+    height: 30px;
+    border-radius: 4px;
+    padding-top: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ECECEC;
+    // box-shadow: none;
+    font-size: 16px;
+    color: $black;
+}
+
+#upperPrice {
+    width: 60px;
+    height: 30px;
+    border-radius: 4px;
+    padding-top: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ECECEC;
+    // box-shadow: none;
+    font-size: 16px;
+      color: $black;
+}
 
 .noUi-handle {
   border-radius: 50% !important;
@@ -10,7 +50,7 @@ background-color: white !important;
 text-decoration: none;
     background: #FFF;
     cursor: default;
-    box-shadow: inset 0 0 1px #FFF;
+    box-shadow: none !important;
 }
 
 
@@ -31,5 +71,8 @@ text-decoration: none;
 
 .noUi-handle:before, .noUi-handle:after {
     background: transparent !important;
+    border: none !important;
+    border-radius: 50% !important;
 }
+
 
