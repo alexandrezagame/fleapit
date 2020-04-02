@@ -13,7 +13,7 @@ User.destroy_all
 puts "creating users"
 
 felix_image = URI.open('https://ca.slack-edge.com/T02NE0241-UT45X0WAX-59f8a63171b0-512')
-felix = User.create!(email: 'godmode@god.gg', username: 'God', password: '123456', location: 'Stockholm')
+felix = User.create!(email: 'felix@gmail.com', username: 'Felix', password: '123456', location: 'Stockholm')
 felix.avatar.attach(io: felix_image, filename: 'felix.jpg', content_type: 'image/jpg')
 felix.save!
 
