@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   acts_as_voter
   belongs_to :user
   has_many_attached :pictures
-  has_many :matches
+  has_many :matches, dependent: :destroy
   belongs_to :category
 
   validates :name, presence: true
