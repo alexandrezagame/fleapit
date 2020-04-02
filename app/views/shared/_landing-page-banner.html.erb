@@ -2,7 +2,7 @@
 <div class="home-banner">
   <h1 class="text-xl text-white semibold title-font mb-3">The non-monetary sustainable exchange platform</h1>
   <% if user_signed_in? %>
-    <%= link_to 'Swipe', items_path, class:"button"  %>
+    <%= link_to 'Exchange', items_path, class:"button"  %>
     <% else %>
     <%= link_to 'Start exchanging', new_user_registration_path, class:"landing-page-button" %>
     <% end %>
