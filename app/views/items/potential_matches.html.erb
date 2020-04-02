@@ -2,10 +2,32 @@
     <div>
         <%= render 'shared/vertical-navbar', matches_count: @matches_count %>
     </div>
+
   <% if @item %>
-    <div class="items-container">
+  <div class="items-container">
     <div class="row justify-content-center" id="potentialMatches">
       <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+        <div class="row justify-content-around">
+          <a class="button" href="#">Category</a>
+          <h5 style="text-align: center;"><strong>Pick an item to exchange for</strong></h5>
+          <a class="button" href="#">Location</a>
+        </div>
+
+        <div data-item-id="<%= @item.id %>" class="card-trip">
+
+          <div class="card-trip card-trip d-flex">
+            <div class="carousel-card-information-user">
+              <%= cl_image_tag @item.user.avatar.key, class: "avatar" %>
+              <h6><%= @item.user.username %></h6>
+              <h6><%= @item.user.location %></h6>
+            </div>
+
+
+            <div class="carousel-card-information-bis">
+              <h3>  <%= @item.name %> </h3>
+              <div class="scrollbar square scrollbar-lady-lips thin">
+                <div class="force-overflow">
+                  <p><%= @item.description %></p>
 
           <h5 style="text-align: center;">Pick an item to exchange for</h5>
 
@@ -31,24 +53,32 @@
                     <%= link_to 'Dislike', item_dislike_path(@item, my_item: @my_item), class:"btn btn-danger", remote: true  %>
                     <%= link_to 'like', item_like_path(@item, my_item: @my_item), class:"btn btn-success", remote: true %>
                   </div>
+
                 </div>
               </div>
-
-              <div class="image-items">
-                <% @item.pictures.each do |picture| %>
-                <%= cl_image_tag picture.key, class: "items-image" %>
-                <% end %>
+              <p><%= @item.min_price %> | <%= @item.max_price %></p>
+              <div class="voting">
+                <%= link_to 'Dislike', item_dislike_path(@item, my_item: @my_item), class:"btn btn-danger", remote: true  %>
+                <%= link_to 'like', item_like_path(@item, my_item: @my_item), class:"btn btn-success", remote: true %>
               </div>
-
             </div>
+          </div>
+
+          <div class="image-items">
+            <% @item.pictures.each do |picture| %>
+            <%= cl_image_tag picture.key, class: "items-image" %>
+            <% end %>
+          </div>
+
+        </div>
       </div>
     </div>
-    </div>
+  </div>
   <% else %>
-    <div>
-      <h1>No more items for this category..</h1>
-      <%= link_to 'Swipe with another item', items_path, alert: "No more items for this category.."  %>
-    </div>
+  <div>
+    <h1>No more items for this category..</h1>
+    <%= link_to 'Swipe with another item', items_path, alert: "No more items for this category.."  %>
+  </div>
   <% end %>
 </div>
 
