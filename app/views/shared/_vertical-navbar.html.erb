@@ -17,10 +17,6 @@
             </h6>
         </div>
     </div>
-    <div class="row justify-content-around">
-        <a class="button-small" href="#">Category</a>
-        <a class="button-small" href="#">Location</a>
-    </div>
     <div class="btn-group-vertical vertical-button">
         <%= link_to 'My Matches', matches_path, class:"button" %>
         <% if current_user.items.size > 0 %>
