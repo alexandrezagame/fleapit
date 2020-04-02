@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :chat_rooms, only: [] do
       resources :messages, only: [ :create ]
   end
+
+
 end
