@@ -1,6 +1,16 @@
-.card-footer {
-  background: transparent;
-  border-top: 0px;
+.fleapit-intro {
+  margin-bottom: 50px;
+}
+.fleapit-intro h3 {
+  margin-bottom: 20px;
+}
+
+.fleapit-intro p {
+letter-spacing: 0.5px;
+}
+.container-info-cards {
+  width: 1000px;
+  padding: 50px;
 }
 
 .landing-page-container {
@@ -20,20 +30,25 @@
 }
 
 .card {
-  margin: 20px;
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  // margin: 20px;
   border-radius: 4px;
-  // padding: 30px;
   // box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+  letter-spacing: 0.5px;
 }
 
 .card img {
-  padding: 15px;
+  // padding: 15px;
   font-size: 30px;
 }
 
 #info-card {
-  padding: 15px;
+  // padding: 10px;
   font-size: 30px;
 }
 
@@ -41,5 +56,10 @@
 .card-body {
   color: $font-color;
 }
+
+.card-title {
+padding: 10px;
+}
+
 
 
