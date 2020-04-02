@@ -1,7 +1,7 @@
 <div class="chatboxcontainer">
 
     <div>
-      <%= render 'shared/vertical-navbar' %>
+      <%= render 'shared/vertical-navbar', matches_count: @matches_count %>
     </div>
 <!-- <div class="super-container"> -->
   <div class="items-chat">
@@ -28,7 +28,7 @@
             <% end %>
           </div>
           <div id="create-message">
-            <%= simple_form_for [ @match_chat_room_messages, Message.new ], url: match_chat_room_messages_path(chat_room_id: params[:id], match_id: params[:match_id]),remote: true, html: {autocomplete: "off" } do |f| %>
+            <%= simple_form_for [ @match_chat_room_messages, Message.new ], url: chat_room_messages_path(chat_room_id: params[:id]),remote: true, html: {autocomplete: "off" } do |f| %>
               <%= f.input :content, label: false, placeholder:"press enter to send the message" %>
             <% end %>
           </div>

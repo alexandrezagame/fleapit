@@ -76,8 +76,22 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    @item.assign_attributes(name: params[:item][:name]) if params[:item][:name]
+    @item.assign_attributes(description: params[:item][:description]) if params[:item][:description]
+    @item.assign_attributes(brand: params[:item][:brand]) if params[:item][:brand]
+    @item.assign_attributes(min_price: params[:item][:min_price]) if params[:item][:min_price]
+    @item.assign_attributes(max_price: params[:item][:max_price]) if params[:item][:max_price]
+      if params[:item][:category]
+        category = Category.find_by(name: params[:item][:category])
+        @item.assign_attributes(category: category)
+      end
+      if params[:item][:pictures]
+        params[:item][:pictures].each do |picture|
+          @item.pictures.attach(picture)
+        end
+      end
     authorize @item #pundit
-    if @item.update(item_params)
+    if @item.save
       redirect_to items_path, notice: "Item updated"
     else
       render :edit
@@ -96,6 +110,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
+    Match.where(item_id: @item.id).or(Match.where(other_item_id: @item.id)).destroy_all
     authorize @item #pundit
     @item.destroy
     redirect_to items_path, notice: "Item destroyed"

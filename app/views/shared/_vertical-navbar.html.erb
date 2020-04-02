@@ -18,7 +18,10 @@
         </div>
     </div>
     <div class="btn-group-vertical vertical-button">
+      <div class="btn-group-vertical vertical-button button-container">
+        <p class="matches_count"> <%= matches_count %></p>
         <%= link_to 'My Matches', matches_path, class:"button" %>
+      </div>
         <% if current_user.items.size > 0 %>
         <%= link_to 'Exchange', items_path, class:"button" %>
         <% else %>

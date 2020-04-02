@@ -1,7 +1,8 @@
 <div class="big-container">
-  <div>
-    <%= render 'shared/vertical-navbar' %>
-  </div>
+    <div>
+        <%= render 'shared/vertical-navbar', matches_count: @matches_count %>
+    </div>
+
   <% if @item %>
   <div class="items-container">
     <div class="row justify-content-center" id="potentialMatches">
@@ -21,11 +22,38 @@
               <h6><%= @item.user.location %></h6>
             </div>
 
+
             <div class="carousel-card-information-bis">
               <h3>  <%= @item.name %> </h3>
               <div class="scrollbar square scrollbar-lady-lips thin">
                 <div class="force-overflow">
                   <p><%= @item.description %></p>
+
+          <h5 style="text-align: center;">Pick an item to exchange for</h5>
+
+
+            <div data-item-id="<%= @item.id %>" class="card-trip">
+
+              <div class="card-trip card-trip d-flex">
+                <div class="carousel-card-information-user">
+                <%= cl_image_tag @item.user.avatar.key, class: "avatar" %>
+                  <h6><%= @item.user.username %></h6>
+                  <h6><%= @item.user.location %></h6>
+                </div>
+
+                <div class="carousel-card-information-bis">
+                    <h3>  <%= @item.name %> </h3>
+                    <div class="scrollbar square scrollbar-lady-lips thin">
+                    <div class="force-overflow">
+                      <p><%= @item.description %></p>
+                    </div>
+                    </div>
+                    <p><%= @item.min_price %> - <%= @item.max_price %> kr</p>
+                  <div class="voting">
+                    <%= link_to 'Dislike', item_dislike_path(@item, my_item: @my_item), class:"btn btn-danger", remote: true  %>
+                    <%= link_to 'like', item_like_path(@item, my_item: @my_item), class:"btn btn-success", remote: true %>
+                  </div>
+
                 </div>
               </div>
               <p><%= @item.min_price %> | <%= @item.max_price %></p>
