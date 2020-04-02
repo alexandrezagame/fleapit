@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :matches, only: [:create, :index] do
-    post 'exchanged'
+  resources :matches, only: [:create, :index, :update] do
+    # post 'exchanged'
     resources :chat_rooms, only: [ :show, :create ]
   end
   resources :chat_rooms, only: [] do

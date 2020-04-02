@@ -17,20 +17,19 @@
             </h6>
         </div>
     </div>
-    <div class="row justify-content-around">
-        <a class="button-small" href="#">Category</a>
-        <a class="button-small" href="#">Location</a>
-    </div>
     <div class="btn-group-vertical vertical-button">
+      <div class="btn-group-vertical vertical-button button-container">
+        <p class="matches_count"> <%= matches_count %></p>
         <%= link_to 'My Matches', matches_path, class:"button" %>
+      </div>
         <% if current_user.items.size > 0 %>
         <%= link_to 'Exchange', items_path, class:"button" %>
         <% else %>
         <%= link_to 'Upload', new_item_path, class:"button" %>
         <% end %>
+        <%= link_to 'Home', root_path, class:"button" %>
     </div>
     <div class="navbar-logo">
         <%= render 'shared/logo' %>
     </div>
 </div>
-
