@@ -1,3 +1,4 @@
+
 <div class="chatboxcontainer">
 
     <div>
@@ -12,7 +13,7 @@
     </div>
 
     <div class="form-container" id="matches-chat">
-      <div class="chat-header">
+      <div id="chat-header">
           <h5>
             <%= @match.user1.username.capitalize %>
             |
@@ -28,10 +29,11 @@
             <% end %>
           </div>
           <div id="create-message">
-            <%= simple_form_for [ @match_chat_room_messages, Message.new ], url: match_chat_room_messages_path(chat_room_id: params[:id], match_id: params[:match_id]),remote: true, html: {autocomplete: "off" } do |f| %>
+            <%= simple_form_for [ @match_chat_room_messages, Message.new ], url: chat_room_messages_path(chat_room_id: params[:id]),remote: true, html: {autocomplete: "off" } do |f| %>
               <%= f.input :content, label: false, placeholder:"press enter to send the message" %>
             <% end %>
           </div>
+              <%= link_to 'Deal done', match_exchanged_path, class: "button", method: :post%>
     </div>
   </div>
 <!-- </div> -->

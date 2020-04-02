@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   end
 
   resources :matches, only: [:create, :index] do
-    resources :chat_rooms, only: [ :show, :create ] do
+    post 'exchanged'
+    resources :chat_rooms, only: [ :show, :create ]
+  end
+  resources :chat_rooms, only: [] do
       resources :messages, only: [ :create ]
-    end
   end
 end
