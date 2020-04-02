@@ -1,26 +1,34 @@
 <div class="big-container">
-    <div>
-        <%= render 'shared/vertical-navbar', matches_count: @matches_count %>
-    </div>
-    <div class="matches-container">
-        <div class="matches-banner"></div>
-        <%  @matches.each do |match| %>
-        <%  if match.user1_id == current_user.id %>
-        <!-- daniel item-->
-        <div class="matches-pairs">
-            <div class="match-card mb-3" style="max-width: 400px;">
-                <div data-item-id="<%= match.item_id %>">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <%= cl_image_tag match.item.pictures.first.key, class: "card-img" %>
-                        </div>
-                        <!-- user1 div cards, section left, my item info, on right, match info of other user -->
-                        <!-- my item section -->
-                        <!-- <div class="col-md-6 col-lg-6"> -->
-                        <!-- <div class="card-body"> -->
-                        <!-- <h6> -->
-                        <%# match.user1.username %>
-                        <!-- </h6>
+          <div>
+              <%= render 'shared/vertical-navbar', matches_count: @matches_count %>
+          </div>
+
+    <% if @matches.size == 0 %>
+          <div class="zero-items-paragraph2">
+        <p>Hey <%= current_user.username  %>, it seems you don't have any matches yet.
+          <br>
+        </div>
+    <% else %>
+
+  <div class="matches-container">
+          <%  @matches.each do |match| %>
+            <%  if match.user1_id == current_user.id %>
+
+<!-- daniel item-->
+    <div class="matches-pairs">
+          <div class="card mb-3" style="max-width: 400px;">
+            <div data-item-id="<%= match.item_id %>">
+              <div class="row">
+                      <div class="col-md-12">
+                          <%= cl_image_tag match.item.pictures.first.key, class: "card-img" %>
+                      </div>
+                      <!-- user1 div cards, section left, my item info, on right, match info of other user -->
+                      <!-- my item section -->
+                      <!-- <div class="col-md-6 col-lg-6"> -->
+                          <!-- <div class="card-body"> -->
+                              <!-- <h6> -->
+                                  <%# match.user1.username %>
+                              <!-- </h6>
                               <h6> -->
                         <%# match.user1.location %>
                         <!-- </h6> -->
@@ -150,4 +158,7 @@
         <%# link_to 'show page button', item_path(item) %>
         <% end %>
     </div>
+      <% end %>
+  </div>
+  <% end %>
 </div>
