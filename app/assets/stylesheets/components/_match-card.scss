@@ -23,6 +23,7 @@
   align-content: center;
   // flex-direction: row;
   flex-wrap: wrap;
+    width: 100% !important;
 }
 
 .card-body p {
@@ -70,7 +71,6 @@ scrollbar-color: $main-color;
   position: relative;
   justify-content: center;
   align-items: center;
-
 }
 
 .match-card img {
